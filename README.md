@@ -12,11 +12,11 @@ Click on any of the options to find detailed information about each ride, includ
 
 ## Our Team
 
-Alex Allis - Designer, Front-End Developer
-Nicky Cadavillo - Team-Lead, Front-End Developer
-Jefferson Neel - Team-Lead, Rails Developer
-James Publicover - Rails Developer
-Kevin Scott - Rails Developer
-Kate Studwell - Rails Developer
+* Alex Allis - Designer, Front-End Developer
+* Nicky Cadavillo - Team-Lead, Front-End Developer
+* Jefferson Neel - Team-Lead, Rails Developer
+* James Publicover - Rails Developer
+* Kevin Scott - Rails Developer
+* Kate Studwell - Rails Developer
 
 ## Keep in Touch
