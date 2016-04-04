@@ -20,3 +20,6 @@ Click on any of the options to find detailed information about each ride, includ
 * Kate Studwell - Rails Developer
 
 ## Keep in Touch
+
+twitter.com/rider_app
+
