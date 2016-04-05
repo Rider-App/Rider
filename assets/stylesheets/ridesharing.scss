@@ -10,7 +10,7 @@ html {
 
 
   .ridesharing-title{
-    font-size: 10em;
+    font-size: 6em;
     font-weight: 500;
   }
 }
@@ -19,29 +19,61 @@ html {
   margin-top: 5%;
   width: 100%;
 
+    .ridesharing-special {
+      font-weight: 600;
+      width: 50%;
+      color: red;
+      display: inline-block;
+
+      .fa-exclamation-circle {
+        margin-left: 10px;
+        margin-right: 3px;
+      }
+
+      .fa-info-circle{
+        vertical-align: top;
+        font-size: .9em;
+        margin-left: 2px;
+        color: black;
+      }
+    }
+
     .ridesharing-cost-title{
-      font-size: 5em;
+      display: inline-block;
+      font-size: 3em;
       font-weight: 500;
     }
 
+    .ridesharing-car-3 {
+      border: none;
+    }
+
     li {
+      padding-top: 5px;
+      padding-bottom: 2px;
       border-bottom: 3px solid rgb(128,128,128);
-      font-size: 2em;
+      font-size: 1.5em;
 
       h3 {
         display: inline-block;
-        border: 1px solid green;
         width: 49%;
       }
 
       p {
+        font-weight: 600;
         display: inline-block;
-        border: 1px solid magenta;
         width: 49%;
         text-align: right;
+
+        small {
+          font-size: .6em;
+          vertical-align: top;
+        }
+
       }
 
       h2 {
+        font-size: 1em;
         width: 49%;
         display: inline-block;
       }
@@ -55,23 +87,28 @@ html {
 
   .ridesharing-eta-title{
     // @extend .ridesharing-cost-title;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: 500;
   }
 
+  .ridesharing-total-eta {
+    border: none;
+  }
+
   li {
+    padding-top: 5px;
+    padding-bottom: 2px;
     border-bottom: 3px solid rgb(128,128,128);
-    font-size: 2em;
+    font-size: 1.5em;
 
     h3 {
       display: inline-block;
-      border: 1px solid green;
       width: 49%;
     }
 
     p {
+      font-weight: 600;
       display: inline-block;
-      border: 1px solid magenta;
       width: 49%;
       text-align: right;
     }
@@ -80,6 +117,23 @@ html {
       font-size: 1.5em;
       width: 49%;
       display: inline-block;
+
+    }
+    .ridesharing-total-min {
+      font-size: 1.5em;
     }
   }
+}
+
+.ridesharing-go{
+  margin-top: 5%;
+  margin-right: 7px;
+  background-color: #57b74d;
+  width: 100px;
+  height: 75px;
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  float: right;
 }
