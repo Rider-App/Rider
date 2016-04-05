@@ -1,1 +1,50 @@
+$width:100%;
+$border:none red thin;
 
+html{
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 12pt;
+}
+$headerHeight:3.6em;
+
+.header-container{
+  font-weight:600;
+  background-color:#efefef;
+  width:$width;
+  height:$headerHeight;
+  border:$border;
+  text-align: center;
+  overflow:hidden;
+
+  .header-left{
+    background-color: #57b74d;
+    float:left;
+    color:white;
+    width:$width/4;
+    text-align: center;
+    padding:.7em 0 1em 0;
+    font-size: 1.4em;
+    border:$border;
+  }
+  .rider-logo{
+    height:3em;
+    display: inline-block;
+    border:$border;
+    margin-top:.7em;
+    svg{
+      height:2.3em;
+    }
+  }
+  .header-right{
+    background-color: #57b74d;
+    float:right;
+    width:$width/4;
+    text-align: center;
+    font-size: 1.4em;
+    padding:.2em 0 .2em 0;
+    border:$border;
+    svg{
+      height:2.3em;
+    }
+  }
+}
