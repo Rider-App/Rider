@@ -1,0 +1,17 @@
+$font: 'Helvetica Neue', 'Helvetica', sans-serif;
+
+html {
+  font-family: $font;
+  font-size: 12pt;
+}
+
+.home-container{
+  border: 1px solid green;
+}
+
+.home-searchbox {
+  margin-left: 8%;
+  margin-right: 10%;
+  width: 80%;
+  height: 50px;
+}

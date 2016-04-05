@@ -1,0 +1,14 @@
+html {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 12pt; }
+
+.home-container {
+  border: 1px solid green; }
+
+.home-searchbox {
+  margin-left: 8%;
+  margin-right: 10%;
+  width: 80%;
+  height: 50px; }
+
+/*# sourceMappingURL=home.css.map */
