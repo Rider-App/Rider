@@ -1,6 +1,7 @@
 // $('.header-right').on('click', function () {
 //   $('.hamburger-menu').toggleClass('show');
 // });
+//doesn't work unless it's in a controller
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
@@ -17,7 +18,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
   $('.header-right').on('click', function () {
     $('.hamburger-menu').toggleClass('show');
   });
-  
+
 }]);
 
 riderApp.controller('farefairyController', [ '$http', '$scope', function($http, $scope){
@@ -35,6 +36,10 @@ riderApp.controller('farefairyController', [ '$http', '$scope', function($http, 
     $scope.farefairy = data;
     console.log(data);
 
-})
+  })
+
+  $('.fa-info-circle').on('click', function () {
+    $('.special-consid-modal').toggleClass('show');
+  });
 
 }]);

@@ -40,6 +40,9 @@ html {
 input::-webkit-input-placeholder {
   font-size: 1em; }
 
+.home-learn-link {
+  text-decoration: none; }
+
 .home-learn-more {
   width: 60%;
   height: 40px;
@@ -66,6 +69,9 @@ input::-webkit-input-placeholder {
   .powered-by img {
     padding-left: 3px;
     display: inline-block; }
+
+.home-go-link {
+  text-decoration: none; }
 
 .ridesharing-go {
   display: inline-block;

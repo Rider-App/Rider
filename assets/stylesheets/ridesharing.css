@@ -8,6 +8,20 @@ html {
     font-size: 6em;
     font-weight: 500; }
 
+.special-consid-modal {
+  position: absolute;
+  text-align: center;
+  display: none;
+  margin-left: 30%;
+  width: 200px;
+  height: auto;
+  border: 1px solid black;
+  color: black;
+  background-color: white; }
+
+.special-consid-modal.show {
+  display: inline-block; }
+
 .ridesharing-costs {
   margin-top: 5%;
   width: 100%; }
