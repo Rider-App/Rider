@@ -1,3 +1,6 @@
+// $('.header-right').on('click', function () {
+//   $('.hamburger-menu').toggleClass('show');
+// });
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
@@ -11,11 +14,22 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
   google.maps.event.addDomListener(window, 'load', init);
   // $scope.$apply();
 
-
+  $('.header-right').on('click', function () {
+    $('.hamburger-menu').toggleClass('show');
+  });
+  
 }]);
 
 riderApp.controller('farefairyController', [ '$http', '$scope', function($http, $scope){
-  $scope.message = 'HELLO WORLD';
+  // $scope.message = 'HELLO WORLD';
+
+  //pseudocoding and setup for post request
+  // var originAddress = $(".searchTextField").val()
+  // var destinationAddress = $("searchTextFieldTwo").val()
+  //
+  // $http.post('http://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress , { origin_address: originAddress }, {destination_address: destinationAddress} )
+  // .then(function (result) { })
+  // .catch(function (error) { });
 
   $http.get('http://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
     $scope.farefairy = data;

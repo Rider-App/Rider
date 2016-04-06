@@ -16,9 +16,9 @@
   <section class = "ridesharing-eta">
     <h3 class = "ridesharing-eta-title">ETA</h3>
     <ul class = "ridesharing-eta-list">
-      <li class = "ridesharing-pickup line"><h3>Pickup ETA</h3><p>2 min</p></li>
-      <li class = "ridesharing-transit line"><h3>Transit Time</h3><p>23 min</p></li>
-      <li class = "ridesharing-total-eta"><h2>Total ETA</h2><p class = "ridesharing-total-min">25 min</p></li>
+      <li class = "ridesharing-pickup line"><h3>Pickup ETA</h3><p>{{farefairy.options[0].details.options[0].pickup_eta}}</p></li>
+      <li class = "ridesharing-transit line"><h3>Transit Time</h3><p>{{farefairy.options[0].details.options[0].transit_time}}</p></li>
+      <li class = "ridesharing-total-eta"><h2>Total ETA</h2><p class = "ridesharing-total-min">{{farefairy.options[0].details.options[0].total_eta}}</p></li>
     </ul>
   </section>
 

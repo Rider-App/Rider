@@ -70,7 +70,8 @@ input::-webkit-input-placeholder {
 .ridesharing-go {
   display: inline-block;
   margin-top: 5px;
-  margin-right: 11%;
+  margin-left: 0;
+  margin-right: 60px;
   background-color: #57b74d;
   width: 100px;
   height: 75px;
