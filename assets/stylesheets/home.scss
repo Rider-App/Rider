@@ -9,7 +9,6 @@ html {
   border: .1px solid white;
   background-image: url(/assets/images/static-map.png);
   background-size: cover;
-  padding-bottom: 10%;
 }
 
 .home-container{
@@ -23,14 +22,22 @@ html {
   .home-search-label{
     width: 50%;
     margin-left: 8%;
+    margin-top: 3px;
+    margin-bottom: 3px;
     font-size: 2em;
     display: inline-block;
   }
 
   .home-favorites{
+    margin-bottom: 3px;
+    font-weight: 600;
     width: 30%;
     text-align: right;
     display: inline-block;
+  }
+
+  .fa-map-marker{
+
   }
 
 }

@@ -10,6 +10,10 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
   }
 
   google.maps.event.addDomListener(window, 'load', init);
-  $scope.$apply();
+  // $scope.$apply();
+
+  $http.get('http://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+    console.log('scope is working');
+);
 
 }]);
