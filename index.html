@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app = "riderApp">
     <head>
         <meta charset="utf-8">
@@ -10,9 +10,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
         <script src="assets/js/app.js"></script>
         <script src="assets/js/controllers.js"></script>
+        <!--MAPBOX-STUFF-->
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css' rel='stylesheet' />
     </head>
       <!-- define angular controller -->
-    <body ng-controller="mainController">
+    <body>
       <header>
         <div class="header-container">
           <div class="header-left">login</div>
@@ -65,8 +69,8 @@
           </div>
         </div>
       </header>
+      <a href="#/Rates">Rates</a>
         <ng-view></ng-view>
-
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     </body>
