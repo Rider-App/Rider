@@ -13,7 +13,7 @@ html {
   margin-top: 20%;
   margin-bottom: 15%;
   padding-top: 10%;
-  padding-bottom: 10%; }
+  padding-bottom: 20%; }
   .home-container .home-search-label {
     width: 50%;
     margin-left: 8%;
@@ -62,22 +62,24 @@ input::-webkit-input-placeholder {
   margin-left: 8%;
   margin-right: 0; }
   .powered-by p {
+    margin-top: 10px;
     font-size: 1em;
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 40px; }
   .powered-by img {
+    width: 50%;
+    height: 50%;
     padding-left: 3px;
     display: inline-block; }
 
 .home-go-link {
   text-decoration: none; }
 
-.ridesharing-go {
+.home-ridesharing-go {
   display: inline-block;
-  margin-top: 5px;
-  margin-left: 0;
-  margin-right: 60px;
+  margin-top: 10px;
+  margin-right: 11%;
   background-color: #57b74d;
   width: 100px;
   height: 75px;
