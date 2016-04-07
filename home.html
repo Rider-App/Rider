@@ -1,17 +1,26 @@
 <div ng-controller = "mainController" class = "home-map-container">
 
-<section class = "home-container" ng-controller = "mainController">
+<section ng-controller = "farefairyController" class = "home-container" ng-controller = "mainController">
+  <div class = "login-modal-cont">
+      <button class="login-modal-x">x</button>
+      <input id = "login-email-input" type="text" placeholder="email"/>
+      <input id = "login-pwd-input" type="text" placeholder="password"/>
+      <div class = "login-submit-btn">send</div>
+  </div> <!-- closes modal-container -->
+
+
   <label class = "home-search-label">Start</label>
   <aside class = "home-favorites">favorites</aside>
+  <i class="fa fa-map-marker fa-2x"></i>
   <input id="searchTextField" class = "home-searchbox" type="text" placeholder = "">
-  <!-- <i class="fa fa-map-marker fa-2x"></i> -->
   <label class = "home-search-label">Destination</label>
   <aside class = "home-favorites">favorites</aside>
+  <i class="fa fa-map-marker fa-2x"></i>
   <input id="searchTextFieldTwo" class = "home-searchbox" type="text" placeholder = "">
 
   <div class = "powered-by"><p>Powered by</p><img class = "farefairy" src = "/assets/images/FareFairyLogo-01.jpg"></img></div>
 
-  <div class = "ridesharing-go">
+  <a class = "home-go-link" href = "#/Rates"><div class = "home-ridesharing-go">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
        viewBox="0 0 134.1 59" style="enable-background:new 0 0 134.1 59;" xml:space="preserve">
       <style type="text/css">
@@ -56,11 +65,11 @@
           </g>
       </g>
       </svg>
-  </div>
+  </div></a>
 
 </section>
 
 
-<div class = "home-learn-more">Learn More</div>
+<a class = "home-learn-link" href = "#/LearnMore"><div class = "home-learn-more">Learn More</div></a>
 
 </div>
