@@ -37,7 +37,10 @@ html {
   }
 
   .fa-map-marker{
-
+    position: absolute;
+    display: block;
+    margin-top: 10px;
+    margin-left: 10%;
   }
 
 }

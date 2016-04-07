@@ -27,6 +27,11 @@ html {
     width: 30%;
     text-align: right;
     display: inline-block; }
+  .home-container .fa-map-marker {
+    position: absolute;
+    display: block;
+    margin-top: 10px;
+    margin-left: 10%; }
 
 .home-searchbox {
   font-size: 1.5em;
