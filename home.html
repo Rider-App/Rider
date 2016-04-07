@@ -1,6 +1,14 @@
 <div ng-controller = "mainController" class = "home-map-container">
 
 <section ng-controller = "farefairyController" class = "home-container" ng-controller = "mainController">
+  <div class = "login-modal-cont">
+      <button class="login-modal-x">x</button>
+      <input id = "login-email-input" type="text" placeholder="email"/>
+      <input id = "login-pwd-input" type="text" placeholder="password"/>
+      <div class = "login-submit-btn">send</div>
+  </div> <!-- closes modal-container -->
+
+
   <label class = "home-search-label">Start</label>
   <aside class = "home-favorites">favorites</aside>
   <i class="fa fa-map-marker fa-2x"></i>

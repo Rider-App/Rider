@@ -11,7 +11,7 @@ html {
   color: #462d28;
   background-color: white;
   margin-top: 20%;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
   padding-top: 10%;
   padding-bottom: 20%; }
   .home-container .home-search-label {
@@ -34,6 +34,7 @@ html {
     margin-left: 10%; }
 
 .home-searchbox {
+  text-indent: 10%;
   font-size: 1.5em;
   margin-left: 8%;
   margin-right: 10%;
@@ -48,7 +49,7 @@ input::-webkit-input-placeholder {
 .home-learn-link {
   text-decoration: none; }
 
-.home-learn-more {
+.home-learn-more, .login-modal-cont .login-submit-btn {
   width: 60%;
   height: 40px;
   padding-top: 10px;
@@ -58,8 +59,7 @@ input::-webkit-input-placeholder {
   text-align: center;
   margin-left: 20%;
   margin-right: 15%;
-  border-radius: 5px;
-  border: 3px solid #462d28; }
+  border-radius: 5px; }
 
 .powered-by {
   display: inline-block;
@@ -94,5 +94,29 @@ input::-webkit-input-placeholder {
   padding-right: 5px;
   border-radius: 5px;
   float: right; }
+
+.login-modal-cont {
+  display: none;
+  margin-left: 8%;
+  width: 80%;
+  height: 300px;
+  background-color: gray;
+  position: absolute; }
+  .login-modal-cont input {
+    font-size: 1.5em;
+    margin-left: 8%;
+    margin-right: 10%;
+    width: 80%;
+    height: 50px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-top: 10px; }
+  .login-modal-cont .login-submit-btn {
+    margin-top: 10%; }
+  .login-modal-cont .login-modal-x {
+    margin-left: 90%; }
+
+.login-modal-cont.show {
+  display: block; }
 
 /*# sourceMappingURL=home.css.map */

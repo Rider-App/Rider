@@ -19,6 +19,16 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
     $('.hamburger-menu').toggleClass('show');
   });
 
+  $('.header-left').on('click', function () {
+    $('.login-modal-cont').toggleClass('show');
+
+  });
+
+  $('.login-modal-x').on('click', function () {
+    $('.login-modal-cont.show').removeClass('show');
+
+  });
+
 }]);
 
 riderApp.controller('farefairyController', [ '$http', '$scope', function($http, $scope){
