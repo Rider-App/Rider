@@ -1,24 +1,25 @@
 <div ng-controller = "farefairyController" class = "ridesharing-cont">
+  <div ng-controller = "rideSharingController">
   <header class = "ridesharing-header">
-    <h1 class = "ridesharing-title">{{farefairy.options[0].travel_type}}</h1>
+    <h1 class = "ridesharing-title">{{mode}}</h1>
   </header>
-
   <section class = "ridesharing-costs">
-    <h3 class = "ridesharing-cost-title">{{farefairy.options[0].travel_type}}</h3>
+    <div class = "special-consid-modal">Increased rates during times of high demand.</div>
+    <h3 class = "ridesharing-cost-title">Cost</h3>
     <aside class = "ridesharing-special"><i class="fa fa-exclamation-circle"></i>Surge Pricing<i class="fa fa-info-circle"></i></aside>
     <ul class = "ridesharing-cost-list">
-      <li class = "ridesharing-car-1"><h3>{{farefairy.options[0].details.options[0].ride_name}}</h3><p><small>$</small>{{farefairy.options[0].details.options[0].price_min}} - {{farefairy.options[0].details.options[0].price_max}}</p></li>
-      <li class = "ridesharing-car-2"><h3>{{farefairy.options[0].details.options[1].ride_name}}</h3><p><small>$</small>{{farefairy.options[0].details.options[1].price_min}} - {{farefairy.options[0].details.options[1].price_max}}</p></li>
-      <li class = "ridesharing-car-3"><h3>{{farefairy.options[0].details.options[2].ride_name}}</h3><p><small>$</small>{{farefairy.options[0].details.options[2].price_min}} - {{farefairy.options[0].details.options[2].price_max}}</p></li>
+      <li class = "ridesharing-car-1"><h3>{{carTypeOne}}</h3><p><small>$</small>{{priceOneMin}} &ndash; {{priceOneMax}}</p></li>
+      <li class = "ridesharing-car-2"><h3>{{carTypeTwo}}</h3><p><small>$</small>{{priceTwoMin}} &ndash; {{priceTwoMax}}</p></li>
+      <li class = "ridesharing-car-3"><h3>{{carTypeThree}}</h3><p><small>$</small>{{priceThreeMin}} &ndash; {{priceThreeMax}}</p></li>
     </ul>
   </section>
 
   <section class = "ridesharing-eta">
     <h3 class = "ridesharing-eta-title">ETA</h3>
     <ul class = "ridesharing-eta-list">
-      <li class = "ridesharing-pickup line"><h3>Pickup ETA</h3><p>2 min</p></li>
-      <li class = "ridesharing-transit line"><h3>Transit Time</h3><p>23 min</p></li>
-      <li class = "ridesharing-total-eta"><h2>Total ETA</h2><p class = "ridesharing-total-min">25 min</p></li>
+      <li class = "ridesharing-pickup line"><h3>Pickup ETA</h3><p>{{pickupETA}}</p></li>
+      <li class = "ridesharing-transit line"><h3>Transit Time</h3><p>{{transitTime}}</p></li>
+      <li class = "ridesharing-total-eta"><h2>Total ETA</h2><p class = "ridesharing-total-min">{{totalETA}}</p></li>
     </ul>
   </section>
 
@@ -68,6 +69,7 @@
       </g>
       </svg>
   </div>
+</div>
 
 
 </div>

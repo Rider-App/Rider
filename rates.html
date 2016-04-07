@@ -5,13 +5,23 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD7a8bxBgY5NSPu-xtBBrbI_W7FLAbp478&q=Space+Needle,Seattle+WA" allowfullscreen>
 </iframe> -->
 
+
 <div ng-controller="mapController" id="map"></div>
-<div class="categories">
-  <div class="mode">Mode</div>
-  <div class="price">Price</div>
-  <div class="eta">ETA</div>
+<div ng-controller="farefairyController" class="container">
+  <div class="categories">
+    <div class="mode">Mode</div>
+    <div class="price">Price</div>
+    <div class="eta">ETA</div>
+  </div>
+  <div ng-repeat="rate in ridesharing" class="rates-item">
+    {{rate.travel_type}}
+    {{rate.price_min}}
+    &ndash;
+    {{rate.price_max}}
+    {{rate.eta + " min"}}
+    <a href="#/Ridesharing" ng-click="clickedRideshare($index)">Arrow!</a>
+  </div>
 </div>
-<div>{{message}}</div>
 <!-- <div class="rate-content">
   <div ng-repeat></div>
 </div> -->

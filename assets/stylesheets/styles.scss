@@ -48,3 +48,39 @@ $headerHeight:3.6em;
     }
   }
 }
+
+.hamburger-menu {
+  display: none;
+
+.ham-caret{
+  margin-left: 85%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid gray;
+}
+
+.ham-nav{
+  position: absolute;
+  font-size: 2em;
+  color: white;
+  background-color: gray;
+  width: 100%;
+
+    li{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
+  } //closes ham-nav
+} //closes hamburger-menu
+
+
+
+.hamburger-menu.show{
+  display:block;
+}
