@@ -1,7 +1,3 @@
-// $('.header-right').on('click', function () {
-//   $('.hamburger-menu').toggleClass('show');
-// });
-//doesn't work unless it's in a controller
 var rideType;
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
@@ -14,7 +10,6 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
   }
 
   google.maps.event.addDomListener(window, 'load', init);
-  // $scope.$apply();
 
   $('.header-right').on('click', function () {
     $('.hamburger-menu').toggleClass('show');
@@ -29,6 +24,34 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
     $('.login-modal-cont.show').removeClass('show');
 
   });
+
+  //geolocation API
+  if (navigator.geolocation) {
+      navigator.geolocation.currentPosition(locationSuccess, locationFail);
+      console.log("geolocation works")
+  } else {
+  	alert('Geolocation is not supported in your browser. Please enter an address.');
+  }
+
+  // $scope.currentPosition = function(value){
+  //   function locationSuccess(event) {
+  //      $("#searchTextField").val() = event.coords.latitude;
+  //      $("#Longitude").val() = event.coords.longitude;
+  //      $("#searchTextField").val() = event.coords.latitude + ", " + event.coords.longitude;
+  //
+  //  }
+
+   // If something has gone wrong with the geolocation request
+  //  function locationFail(event) {
+  //      alert("Location failed. Please enter address.");
+  //  }
+  //
+  // }
+
+    // $("#searchTextFieldTwo").val() = position.coords.longitude;
+
+
+
 
 }]);
 
