@@ -1,22 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app = "riderApp">
     <head>
         <meta charset="utf-8">
         <title>Rider</title>
         <link rel="stylesheet" href="assets/stylesheets/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/stylesheets/styles.css">
+        <link rel="stylesheet" href="assets/stylesheets/home.css">
+        <link rel="stylesheet" href="assets/stylesheets/ridesharing.css">
+        <link rel="stylesheet" href="assets/stylesheets/rates.css">
+        <link rel="stylesheet" href="assets/stylesheets/learn-more.css">
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_YQNuR9L13DHKMtg2kDULW4Rlg4wpsTc&libraries=places"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
         <script src="assets/js/app.js"></script>
         <script src="assets/js/controllers.js"></script>
+
     </head>
       <!-- define angular controller -->
-    <body ng-controller="mainController">
+    <body>
       <header>
         <div class="header-container">
           <div class="header-left">login</div>
-            <div class="rider-logo">
+            <a href ="#/"><div class="rider-logo">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 206 59" style="enable-background:new 0 0 206 59;" xml:space="preserve">
               <style type="text/css">
@@ -46,7 +52,7 @@
               		C156.2,22.6,154.2,23.4,152.8,24.8z"/>
               </g>
               </svg>
-            </div>
+            </div></a>
           <div class="header-right">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 247 139" style="enable-background:new 0 0 247 139;" xml:space="preserve">
@@ -64,10 +70,16 @@
             </svg>
           </div>
         </div>
+        <aside class = "hamburger-menu">
+          <div class ="ham-caret"></div>
+          <ul class = "ham-nav">
+            <li><a class = "ham-link" href = "#/LearnMore">Learn More</a></li>
+            <li><a class = "ham-link" href = "#/">New Request</a></li>
+            <li>Social Media</li>
+          </ul>
+        </aside>
       </header>
         <ng-view></ng-view>
-
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     </body>
 </html>
