@@ -1,3 +1,4 @@
+//doesn't work unless it's in a controller
 var rideType;
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
@@ -65,7 +66,7 @@ riderApp.controller('farefairyController', [ '$http', '$scope', function($http, 
   // .then(function (result) { })
   // .catch(function (error) { });
 
-  $http.get('http://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+  $http.get('https://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
     $scope.farefairy = data;
     $scope.ridesharing = $scope.farefairy.ride_sharing;
     // console.log(data.ride_sharing);
@@ -84,27 +85,50 @@ riderApp.controller('farefairyController', [ '$http', '$scope', function($http, 
 
 riderApp.controller('rideSharingController', ['$http', '$scope', function($http, $scope){
 
-  $http.get('http://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+  $(".ridesharing-special").hide();//Hide special_considerations warning
+
+  $http.get('https://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
     $scope.farefairy = data;
+
+    $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
+    //NG Repeat for the detail cost section.
+
+    //Determination for SURGE PRICING
+    var surgePricing = $scope.farefairy.ride_sharing[rideType].details.special_considerations;
+    if(surgePricing === "surge pricing"){
+      $(".ridesharing-special").show();
+      $(".special-considerations-text").html("Surge Pricing");
+    }
+    else if(surgePricing === "prime time"){
+      $(".ridesharing-special").show();
+      $(".special-considerations-text").html("Prime Time");
+    }
 
     // $scope.ridesharing = $scope.farefairy.ride_sharing;
     // console.log(data.ride_sharing);
     // console.log(data);
+    console.log(data.ride_sharing);
+    console.log(data.ride_sharing[rideType]);
+    console.log(data.ride_sharing[rideType].details);
+    console.log(data.ride_sharing[rideType].details.ride_sharing);
+    console.log(data.ride_sharing[rideType].details.ride_sharing[1]);
+    console.log(data.ride_sharing[rideType].details.ride_sharing[0].ride_name);
     $scope.mode = data.ride_sharing[rideType].travel_type;
-    $scope.carTypeOne = data.ride_sharing[rideType].details.options[0].ride_name;
-    $scope.carTypeTwo = data.ride_sharing[rideType].details.options[1].ride_name;
-    $scope.carTypeThree = data.ride_sharing[rideType].details.options[2].ride_name;
 
-    $scope.priceOneMin = data.ride_sharing[rideType].details.options[0].price_min;
-    $scope.priceOneMax = data.ride_sharing[rideType].details.options[0].price_max;
-    $scope.priceTwoMin = data.ride_sharing[rideType].details.options[1].price_min;
-    $scope.priceTwoMax = data.ride_sharing[rideType].details.options[1].price_max;
-    $scope.priceThreeMin = data.ride_sharing[rideType].details.options[2].price_min;
-    $scope.priceThreeMax = data.ride_sharing[rideType].details.options[2].price_max;
+    // $scope.carTypeOne = data.ride_sharing[rideType].details.options[0].ride_name;
+    // $scope.carTypeTwo = data.ride_sharing[rideType].details.options[1].ride_name;
+    // $scope.carTypeThree = data.ride_sharing[rideType].details.options[2].ride_name;
+    //
+    // $scope.priceOneMin = data.ride_sharing[rideType].details.options[0].price_min;
+    // $scope.priceOneMax = data.ride_sharing[rideType].details.options[0].price_max;
+    // $scope.priceTwoMin = data.ride_sharing[rideType].details.options[1].price_min;
+    // $scope.priceTwoMax = data.ride_sharing[rideType].details.options[1].price_max;
+    // $scope.priceThreeMin = data.ride_sharing[rideType].details.options[2].price_min;
+    // $scope.priceThreeMax = data.ride_sharing[rideType].details.options[2].price_max;
 
-    $scope.pickupETA = data.ride_sharing[rideType].details.options[0].pickup_eta;
-    $scope.transitTime = data.ride_sharing[rideType].details.options[0].transit_time;
-    $scope.totalETA = data.ride_sharing[rideType].details.options[0].total_eta;
+    // $scope.pickupETA = data.ride_sharing[rideType].eta;
+    // $scope.transitTime = data.ride_sharing[rideType].details.options[0].transit_time;
+    $scope.totalETA = data.ride_sharing[rideType].eta;
 
 
 

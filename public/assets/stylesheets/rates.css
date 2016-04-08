@@ -1,0 +1,81 @@
+#map {
+  width: 100%;
+  height: 25em; }
+
+.categories {
+  background-color: #C7DAE3;
+  border-top: solid grey thin;
+  border-bottom: solid grey thin;
+  font-size: .95em;
+  font-weight: 600; }
+
+.mode {
+  display: inline-block;
+  border-right: solid grey thin;
+  width: 25%;
+  padding: .5em 0 .5em .5em; }
+
+.price {
+  display: inline-block;
+  border-right: solid grey thin;
+  width: 30%;
+  padding: .5em 0 .5em .25em; }
+
+.eta {
+  display: inline-block;
+  padding: .5em 0 .5em 0; }
+
+.rates-container {
+  border: none red thin;
+  overflow: scroll; }
+
+.rates-item {
+  font-weight: 600;
+  color: #505050;
+  border: none red thin;
+  border-bottom: solid grey thin;
+  padding-right: .6em; }
+
+.travel-type {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 25%;
+  padding: .5em 0 .5em .5em;
+  border: none red thin; }
+
+.rate-dollar-sign {
+  font-size: .5em;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: .3em; }
+
+.rates-price {
+  font-size: 1.2em;
+  display: inline-block;
+  border: none red thin;
+  width: 31%;
+  padding: 0 0 0 .25em; }
+
+.rate-eta {
+  font-size: 1.2em;
+  border: none green thin;
+  display: inline-block; }
+
+.rate-eta-number {
+  display: inline-block; }
+
+.rate-min {
+  font-size: .6em;
+  display: inline-block;
+  border: none blue thin;
+  padding-left: .2em; }
+
+.rates-arrow {
+  border: none red thin;
+  float: right;
+  width: 45px;
+  margin-top: .3em; }
+  .rates-arrow svg {
+    border: none red thin; }
+
+/*# sourceMappingURL=rates.css.map */

@@ -6,11 +6,11 @@
   <section class = "ridesharing-costs">
     <div class = "special-consid-modal">Increased rates during times of high demand.</div>
     <h3 class = "ridesharing-cost-title">Cost</h3>
-    <aside class = "ridesharing-special"><i class="fa fa-exclamation-circle"></i>Surge Pricing<i class="fa fa-info-circle"></i></aside>
+    <aside class = "ridesharing-special"><i class="fa fa-exclamation-circle"></i><div class="special-considerations-text"></div><i class="fa fa-info-circle"></i></aside>
     <ul class = "ridesharing-cost-list">
-      <li class = "ridesharing-car-1"><h3>{{carTypeOne}}</h3><p><small>$</small>{{priceOneMin}} &ndash; {{priceOneMax}}</p></li>
-      <li class = "ridesharing-car-2"><h3>{{carTypeTwo}}</h3><p><small>$</small>{{priceTwoMin}} &ndash; {{priceTwoMax}}</p></li>
-      <li class = "ridesharing-car-3"><h3>{{carTypeThree}}</h3><p><small>$</small>{{priceThreeMin}} &ndash; {{priceThreeMax}}</p></li>
+      <li ng-repeat="name in rideName" class = "ridesharing-car-1"><h3>{{name.ride_name}}</h3><p><small>$</small>{{name.price_min}} &ndash; {{name.price_max}}</p></li>
+      <!-- <li class = "ridesharing-car-2"><h3>{{carTypeTwo}}</h3><p><small>$</small>{{priceTwoMin}} &ndash; {{priceTwoMax}}</p></li>
+      <li class = "ridesharing-car-3"><h3>{{carTypeThree}}</h3><p><small>$</small>{{priceThreeMin}} &ndash; {{priceThreeMax}}</p></li> -->
     </ul>
   </section>
 
@@ -19,7 +19,7 @@
     <ul class = "ridesharing-eta-list">
       <li class = "ridesharing-pickup line"><h3>Pickup ETA</h3><p>{{pickupETA}}</p></li>
       <li class = "ridesharing-transit line"><h3>Transit Time</h3><p>{{transitTime}}</p></li>
-      <li class = "ridesharing-total-eta"><h2>Total ETA</h2><p class = "ridesharing-total-min">{{totalETA}}</p></li>
+      <li class = "ridesharing-total-eta"><h2>Total ETA</h2><p class = "ridesharing-total-min">{{totalETA + " min"}}</p></li>
     </ul>
   </section>
 
