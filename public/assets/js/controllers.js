@@ -27,12 +27,12 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
   });
 
   //geolocation API
-  if (navigator.geolocation) {
-      navigator.geolocation.currentPosition(locationSuccess, locationFail);
-      console.log("geolocation works")
-  } else {
-  	alert('Geolocation is not supported in your browser. Please enter an address.');
-  }
+  // if (navigator.geolocation) {
+  //     navigator.geolocation.currentPosition(locationSuccess, locationFail);
+  //     console.log("geolocation works")
+  // } else {
+  // 	alert('Geolocation is not supported in your browser. Please enter an address.');
+  // }
 
   // $scope.currentPosition = function(value){
   //   function locationSuccess(event) {
