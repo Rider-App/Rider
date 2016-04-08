@@ -4,6 +4,13 @@
 //doesn't work unless it's in a controller
 var rideType;
 
+riderApp.config( [
+    '$compileProvider',
+    function( $compileProvider )
+    {
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|uber|lyft):/);    }
+]);
+
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
   function init() {
@@ -44,7 +51,7 @@ riderApp.controller('farefairyController', [ '$http', '$scope', function($http, 
 
   $http.get('http://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
     $scope.farefairy = data;
-    $scope.ridesharing = $scope.farefairy.ride_sharing;
+    $scope.ridesharing = data.ride_sharing;
     // console.log(data.ride_sharing);
     // console.log(data);
   })
@@ -66,22 +73,24 @@ riderApp.controller('rideSharingController', ['$http', '$scope', function($http,
 
     // $scope.ridesharing = $scope.farefairy.ride_sharing;
     // console.log(data.ride_sharing);
-    // console.log(data);
+    console.log(data);
     $scope.mode = data.ride_sharing[rideType].travel_type;
-    $scope.carTypeOne = data.ride_sharing[rideType].details.options[0].ride_name;
-    $scope.carTypeTwo = data.ride_sharing[rideType].details.options[1].ride_name;
-    $scope.carTypeThree = data.ride_sharing[rideType].details.options[2].ride_name;
+    $scope.carTypeOne = data.ride_sharing[rideType].details.ride_sharing[0].ride_name;
+    $scope.carTypeTwo = data.ride_sharing[rideType].details.ride_sharing[1].ride_name;
+    $scope.carTypeThree = data.ride_sharing[rideType].details.ride_sharing[2].ride_name;
 
-    $scope.priceOneMin = data.ride_sharing[rideType].details.options[0].price_min;
-    $scope.priceOneMax = data.ride_sharing[rideType].details.options[0].price_max;
-    $scope.priceTwoMin = data.ride_sharing[rideType].details.options[1].price_min;
-    $scope.priceTwoMax = data.ride_sharing[rideType].details.options[1].price_max;
-    $scope.priceThreeMin = data.ride_sharing[rideType].details.options[2].price_min;
-    $scope.priceThreeMax = data.ride_sharing[rideType].details.options[2].price_max;
+    $scope.priceOneMin = data.ride_sharing[rideType].details.ride_sharing[0].price_min;
+    $scope.priceOneMax = data.ride_sharing[rideType].details.ride_sharing[0].price_max;
+    $scope.priceTwoMin = data.ride_sharing[rideType].details.ride_sharing[1].price_min;
+    $scope.priceTwoMax = data.ride_sharing[rideType].details.ride_sharing[1].price_max;
+    $scope.priceThreeMin = data.ride_sharing[rideType].details.ride_sharing[2].price_min;
+    $scope.priceThreeMax = data.ride_sharing[rideType].details.ride_sharing[2].price_max;
 
-    $scope.pickupETA = data.ride_sharing[rideType].details.options[0].pickup_eta;
-    $scope.transitTime = data.ride_sharing[rideType].details.options[0].transit_time;
-    $scope.totalETA = data.ride_sharing[rideType].details.options[0].total_eta;
+    $scope.pickupETA = data.ride_sharing[rideType].details.ride_sharing[0].pickup_eta;
+    $scope.transitTime = data.ride_sharing[rideType].details.ride_sharing[0].transit_time;
+    $scope.totalETA = data.ride_sharing[rideType].details.ride_sharing[0].total_eta;
+
+    $scope.journeyURL = data.ride_sharing[rideType].start_journey_url
 
 
 
