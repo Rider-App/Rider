@@ -1,0 +1,39 @@
+$font: 'Helvetica Neue', Helvetica, sans-serif;
+
+html {
+  font-family: $font;
+}
+
+article {
+  margin-top: 5%;
+  margin-left: 9%;
+  width: 80%;
+  height: auto;
+  font-size: 1.2em;
+}
+
+.learn-headers{
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+  color: #57b74d;
+  padding-bottom: 5px;
+}
+
+
+.learn-team {
+  margin-top: 2%;
+  margin-left: 8%;
+  width: 80%;
+  height: auto;
+  font-size: 1.2em;
+
+}
+
+.social-media{
+  margin-top: 2%;
+  margin-left: 8%;
+  width: 80%;
+  height: auto;
+  font-size: 1.2em;
+}

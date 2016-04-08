@@ -6,9 +6,6 @@ riderApp.config(function($routeProvider) {
             .when('/', {
                 templateUrl : 'home.html',
             })
-            .when('/Login',  {
-                templateUrl : 'login.html',
-            })
             .when('/SignUp', {
                 templateUrl : 'sign-up.html',
             })

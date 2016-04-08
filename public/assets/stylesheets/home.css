@@ -1,0 +1,122 @@
+html {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 12pt; }
+
+.home-map-container {
+  border: .1px solid white;
+  background-image: url(/assets/images/static-map.png);
+  background-size: cover; }
+
+.home-container {
+  color: #462d28;
+  background-color: white;
+  margin-top: 20%;
+  margin-bottom: 10%;
+  padding-top: 10%;
+  padding-bottom: 20%; }
+  .home-container .home-search-label {
+    width: 50%;
+    margin-left: 8%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 2em;
+    display: inline-block; }
+  .home-container .home-favorites {
+    margin-bottom: 3px;
+    font-weight: 600;
+    width: 30%;
+    text-align: right;
+    display: inline-block; }
+  .home-container .fa-map-marker {
+    position: absolute;
+    display: block;
+    margin-top: 10px;
+    margin-left: 10%; }
+
+.home-searchbox {
+  text-indent: 10%;
+  font-size: 1.5em;
+  margin-left: 8%;
+  margin-right: 10%;
+  width: 80%;
+  height: 50px;
+  border: 2px solid gray;
+  border-radius: 5px; }
+
+input::-webkit-input-placeholder {
+  font-size: 1em; }
+
+.home-learn-link {
+  text-decoration: none; }
+
+.home-learn-more, .login-modal-cont .login-submit-btn {
+  width: 60%;
+  height: 40px;
+  padding-top: 10px;
+  background-color: white;
+  color: #23c254;
+  font-size: 2em;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 15%;
+  border-radius: 5px; }
+
+.powered-by {
+  display: inline-block;
+  width: 50%;
+  margin-left: 8%;
+  margin-right: 0; }
+  .powered-by p {
+    margin-top: 10px;
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 40px; }
+  .powered-by img {
+    margin-top: 5px;
+    width: 106px;
+    height: 37px;
+    padding-left: 3px;
+    display: inline-block; }
+
+.home-go-link {
+  text-decoration: none; }
+
+.home-ridesharing-go {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 11%;
+  background-color: #57b74d;
+  width: 100px;
+  height: 75px;
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  float: right; }
+
+.login-modal-cont {
+  display: none;
+  margin-left: 8%;
+  width: 80%;
+  height: 300px;
+  background-color: gray;
+  position: absolute; }
+  .login-modal-cont input {
+    font-size: 1.5em;
+    margin-left: 8%;
+    margin-right: 10%;
+    width: 80%;
+    height: 50px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-top: 10px; }
+  .login-modal-cont .login-submit-btn {
+    margin-top: 10%; }
+  .login-modal-cont .login-modal-x {
+    margin-left: 90%; }
+
+.login-modal-cont.show {
+  display: block; }
+
+/*# sourceMappingURL=home.css.map */
