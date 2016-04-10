@@ -4,12 +4,9 @@
 //doesn't work unless it's in a controller
 var rideType;
 
-riderApp.config( [
-    '$compileProvider',
-    function( $compileProvider )
-    {
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|uber|lyft):/);    }
-]);
+riderApp.config( ['$compileProvider', function( $compileProvider ){
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|uber|lyft):/);
+}]);
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
@@ -49,7 +46,7 @@ riderApp.controller('farefairyController', [ '$http', '$scope', function($http, 
   // .then(function (result) { })
   // .catch(function (error) { });
 
-  $http.get('http://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+  $http.get('https://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701', {cache: true}).success(function(data){
     $scope.farefairy = data;
     $scope.ridesharing = data.ride_sharing;
     // console.log(data.ride_sharing);
@@ -68,7 +65,7 @@ riderApp.controller('farefairyController', [ '$http', '$scope', function($http, 
 
 riderApp.controller('rideSharingController', ['$http', '$scope', function($http, $scope){
 
-  $http.get('http://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+  $http.get('https://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701', {cache: true}).success(function(data){
     $scope.farefairy = data;
 
     // $scope.ridesharing = $scope.farefairy.ride_sharing;
