@@ -11,6 +11,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
   }
 
   google.maps.event.addDomListener(window, 'load', init);
+  // $(document).bind("projectLoadComplete", initialize);
 
   $('.header-right').on('click', function () {
     $('.hamburger-menu').toggleClass('show');
@@ -26,35 +27,17 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 
   });
 
-  //geolocation API
-  // if (navigator.geolocation) {
-  //     navigator.geolocation.currentPosition(locationSuccess, locationFail);
-  //     console.log("geolocation works")
-  // } else {
-  // 	alert('Geolocation is not supported in your browser. Please enter an address.');
-  // }
+  // geolocation API
+  $scope.geoLocation = function(){
 
-  // $scope.currentPosition = function(value){
-  //   function locationSuccess(event) {
-  //      $("#searchTextField").val() = event.coords.latitude;
-  //      $("#Longitude").val() = event.coords.longitude;
-  //      $("#searchTextField").val() = event.coords.latitude + ", " + event.coords.longitude;
-  //
-  //  }
+  navigator.geolocation.getCurrentPosition(function(position) {
+    $("#searchTextField").val(position.coords.latitude + " , " + position.coords.longitude);
+    console.log(position.coords.latitude, position.coords.longitude);
+  });
 
-   // If something has gone wrong with the geolocation request
-  //  function locationFail(event) {
-  //      alert("Location failed. Please enter address.");
-  //  }
-  //
-  // }
+}; //closes geoLocation
 
-    // $("#searchTextFieldTwo").val() = position.coords.longitude;
-
-
-
-
-}]);
+}]); //closes mainController
 
 riderApp.controller('farefairyController', [ '$http', '$scope', function($http, $scope){
   $scope.message = 'HELLO WORLD';
@@ -107,35 +90,20 @@ riderApp.controller('rideSharingController', ['$http', '$scope', function($http,
     // $scope.ridesharing = $scope.farefairy.ride_sharing;
     // console.log(data.ride_sharing);
     // console.log(data);
-    console.log(data.ride_sharing);
-    console.log(data.ride_sharing[rideType]);
-    console.log(data.ride_sharing[rideType].details);
-    console.log(data.ride_sharing[rideType].details.ride_sharing);
-    console.log(data.ride_sharing[rideType].details.ride_sharing[1]);
-    console.log(data.ride_sharing[rideType].details.ride_sharing[0].ride_name);
+    // console.log(data.ride_sharing);
+    // console.log(data.ride_sharing[rideType]);
+    // console.log(data.ride_sharing[rideType].details);
+    // console.log(data.ride_sharing[rideType].details.ride_sharing);
+    // console.log(data.ride_sharing[rideType].details.ride_sharing[1]);
+    // console.log(data.ride_sharing[rideType].details.ride_sharing[0].ride_name);
     $scope.mode = data.ride_sharing[rideType].travel_type;
-
-    // $scope.carTypeOne = data.ride_sharing[rideType].details.options[0].ride_name;
-    // $scope.carTypeTwo = data.ride_sharing[rideType].details.options[1].ride_name;
-    // $scope.carTypeThree = data.ride_sharing[rideType].details.options[2].ride_name;
-    //
-    // $scope.priceOneMin = data.ride_sharing[rideType].details.options[0].price_min;
-    // $scope.priceOneMax = data.ride_sharing[rideType].details.options[0].price_max;
-    // $scope.priceTwoMin = data.ride_sharing[rideType].details.options[1].price_min;
-    // $scope.priceTwoMax = data.ride_sharing[rideType].details.options[1].price_max;
-    // $scope.priceThreeMin = data.ride_sharing[rideType].details.options[2].price_min;
-    // $scope.priceThreeMax = data.ride_sharing[rideType].details.options[2].price_max;
-
-    // $scope.pickupETA = data.ride_sharing[rideType].eta;
-    // $scope.transitTime = data.ride_sharing[rideType].details.options[0].transit_time;
     $scope.totalETA = data.ride_sharing[rideType].eta;
-
 
 
     console.log(data);
   })
 
-}]);
+}]); //closes ridesharing controller
 
 riderApp.controller('ratesController', ['$http', '$scope', function($http, $scope){
   $scope.message = 'HELLO WORLD';
