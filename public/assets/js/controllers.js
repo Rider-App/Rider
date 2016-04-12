@@ -1,9 +1,20 @@
 
 //doesn't work unless it's in a controller
+//----GLOBAL-VARIABLES----
 var rideType;
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
+  // geolocation API
+ $scope.geoLocation = function(){
+
+ navigator.geolocation.getCurrentPosition(function(position) {
+   $("#searchTextField").val(position.coords.latitude + " , " + position.coords.longitude);
+   console.log(position.coords.latitude, position.coords.longitude);
+ });
+}; //closes geoLocation
+
+  //-GOOGLE-MAPS-AUTOCOMPLETE-------------------
   function init() {
     var inputStart = document.getElementById('searchTextField');
     var inputDest = document.getElementById('searchTextFieldTwo');
@@ -14,6 +25,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
   google.maps.event.addDomListener(window, 'load', init);
   // $scope.$apply();
 
+  //--LOGIN-MODAL-FUNCTIONS---------------------
   $('.header-right').on('click', function () {
     $('.hamburger-menu').toggleClass('show');
   });
@@ -28,40 +40,89 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 
   });
 
-}]);
+}]);//-END-MAIN-CONTROLLER----------------------
+  // var originAddress = $scope.input1;
+  // var destinationAddress = $scope.input2;
 
-riderApp.controller('farefairyController', [ '$http', '$scope', function($http, $scope){
-  $scope.message = 'HELLO WORLD';
-  //pseudocoding and setup for post request
-  // var originAddress = $(".searchTextField").val()
-  // var destinationAddress = $("searchTextFieldTwo").val()
-  //
-  // $http.post('http://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress , { origin_address: originAddress }, {destination_address: destinationAddress} )
-  // .then(function (result) { })
-  // .catch(function (error) { });
+riderApp.factory('mainInfo', function($http){
+var factory = {};
+factory.getSessions = function(origin, destination){
+ return $http.get('https://farefairy.herokuapp.com/?origin=' + origin + '&destination=' + destination);
+};
+return factory;
+});//end factory
 
-  $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + 'destination=' + destinationAddress).success(function(data){
-    $scope.farefairy = data;
-    $scope.ridesharing = $scope.farefairy.ride_sharing;
-    // console.log(data.ride_sharing);
-    // console.log(data);
-  })
+riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'mainInfo', function($http, $scope, $location, mainInfo){
 
-  $('.fa-info-circle').on('click', function () {
-    $('.special-consid-modal').toggleClass('show');
-  });
+  $scope.go = function ( path ) {
+    $location.path( path );
+  };//Routing on Go button. from home to rate.
+
+  // $scope.input1 = "RDU International Airport, John Brantley Boulevard, Morrisville, NC, United States";
+  // $scope.input2 = "800 Blackwell Street, Durham, NC, United States";
+  // Sets origin and destination values
+  // var originAddress = $scope.input1;
+  // var destinationAddress = $scope.input2;
+  // console.log(originAddress);
+  // console.log(destinationAddress);
+  //define values as variables
 
   $scope.clickedRideshare = function(index){
     rideType = index;
   }
 
-}]);
+ $scope.farefairy = [];
+     var handleSuccess = function(data, status) {
+         $scope.farefairy = data;
+         $scope.ridesharing = $scope.farefairy.ride_sharing;
+        //  $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
+        // $scope.publicTransit = $scope.farefairy.transit;
+        // $scope.taxi = $scope.farefairy.taxis[0];
+        // $scope.taxiDetail = $scope.farefairy.taxis[0].details.contact_info;
+         console.log($scope.farefairy);
+     };
 
-riderApp.controller('rideSharingController', ['$http', '$scope', function($http, $scope){
+     var handleSuccess2 = function(data, status) {
+         $scope.farefairy = data;
+         console.log($scope.farefairy);
+     };
+
+     $scope.print = function(input1, input2){
+       var originAddress = $("#searchTextField").val();
+       var destinationAddress = $("#searchTextFieldTwo").val();
+       console.log(originAddress);
+       console.log(destinationAddress);
+       console.log("hahaJones");
+     mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess);
+     mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess2);
+     //Asynchronous loading courtesy of stack overflow: http://stackoverflow.com/questions/16227644/angularjs-factory-http-service
+     };
+
+  //here lies http get.
+  // $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
+    // $scope.farefairy = data;
+    // $scope.ridesharing = $scope.farefairy.ride_sharing;
+    // console.log(originAddress);
+    // console.log(destinationAddress);
+    // console.log(data);
+
+    // $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
+  //   //NG Repeat for the detail cost section
+  // })//end http get
+
+  $('.fa-info-circle').on('click', function () {
+    $('.special-consid-modal').toggleClass('show');
+  });
+
+
+
+}]);//End farefairycontroller
+
+riderApp.controller('rideSharingController', ['$http', '$scope', '$farefairycontroller', function($http, $scope, farefairyController){
 
   $(".ridesharing-special").hide();//Hide special_considerations warning
 
-  $http.get('https://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+  $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
     $scope.farefairy = data;
 
     $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
@@ -78,34 +139,8 @@ riderApp.controller('rideSharingController', ['$http', '$scope', function($http,
       $(".special-considerations-text").html("Prime Time");
     }
 
-    // $scope.ridesharing = $scope.farefairy.ride_sharing;
-    // console.log(data.ride_sharing);
-    // console.log(data);
-    console.log(data.ride_sharing);
-    console.log(data.ride_sharing[rideType]);
-    console.log(data.ride_sharing[rideType].details);
-    console.log(data.ride_sharing[rideType].details.ride_sharing);
-    console.log(data.ride_sharing[rideType].details.ride_sharing[1]);
-    console.log(data.ride_sharing[rideType].details.ride_sharing[0].ride_name);
     $scope.mode = data.ride_sharing[rideType].travel_type;
-
-    // $scope.carTypeOne = data.ride_sharing[rideType].details.options[0].ride_name;
-    // $scope.carTypeTwo = data.ride_sharing[rideType].details.options[1].ride_name;
-    // $scope.carTypeThree = data.ride_sharing[rideType].details.options[2].ride_name;
-    //
-    // $scope.priceOneMin = data.ride_sharing[rideType].details.options[0].price_min;
-    // $scope.priceOneMax = data.ride_sharing[rideType].details.options[0].price_max;
-    // $scope.priceTwoMin = data.ride_sharing[rideType].details.options[1].price_min;
-    // $scope.priceTwoMax = data.ride_sharing[rideType].details.options[1].price_max;
-    // $scope.priceThreeMin = data.ride_sharing[rideType].details.options[2].price_min;
-    // $scope.priceThreeMax = data.ride_sharing[rideType].details.options[2].price_max;
-
-    // $scope.pickupETA = data.ride_sharing[rideType].eta;
-    // $scope.transitTime = data.ride_sharing[rideType].details.options[0].transit_time;
     $scope.totalETA = data.ride_sharing[rideType].eta;
-
-
-
     console.log(data);
   })
 

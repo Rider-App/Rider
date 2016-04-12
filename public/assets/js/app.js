@@ -1,6 +1,5 @@
 var riderApp = angular.module('riderApp', ['ngRoute']);
 
-
 riderApp.config(function($routeProvider) {
         $routeProvider
             .when('/', {
