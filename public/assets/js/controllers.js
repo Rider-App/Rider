@@ -40,18 +40,15 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 }]); //closes mainController
 
 riderApp.controller('farefairyController', [ '$http', '$scope', function($http, $scope){
-  $scope.message = 'HELLO WORLD';
-  //pseudocoding and setup for post request
-  // var originAddress = $(".searchTextField").val()
-  // var destinationAddress = $("searchTextFieldTwo").val()
-  //
-  // $http.post('http://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress , { origin_address: originAddress }, {destination_address: destinationAddress} )
-  // .then(function (result) { })
-  // .catch(function (error) { });
 
-  $http.get('https://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+  $http.get('https://farefairy.herokuapp.com/fares/show?origin=904%20Lambeth%20Circle%20Durham%20NC%2027705&destination=800%20Blackwell%20St,%20Durham,%20NC%2027701').success(function(data){
     $scope.farefairy = data;
     $scope.ridesharing = $scope.farefairy.ride_sharing;
+    $scope.publicTransit = $scope.farefairy.transit;
+    $scope.taxi = $scope.farefairy.taxis[0];
+    $scope.taxiDetail = $scope.farefairy.taxis[0].details.contact_info;
+    console.log($scope.farefairy.taxis[0].details.contact_info)
+    // console.log(data.transit);
     // console.log(data.ride_sharing);
     // console.log(data);
   })
@@ -70,7 +67,7 @@ riderApp.controller('rideSharingController', ['$http', '$scope', function($http,
 
   $(".ridesharing-special").hide();//Hide special_considerations warning
 
-  $http.get('https://farefairy.herokuapp.com/?origin=5512%20Bridgeman%20Ct%20Durham%20NC%2027703&destination=334%20Blackwell%20Street%20B017,%20Durham,%20NC%2027701').success(function(data){
+  $http.get('https://farefairy.herokuapp.com/fares/show?origin=154%20Grand%20St%20New%20York%20NY%2010013&destination=435%20E%2070th%20st%20New%20York%20NY%2010021').success(function(data){
     $scope.farefairy = data;
 
     $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
@@ -87,15 +84,6 @@ riderApp.controller('rideSharingController', ['$http', '$scope', function($http,
       $(".special-considerations-text").html("Prime Time");
     }
 
-    // $scope.ridesharing = $scope.farefairy.ride_sharing;
-    // console.log(data.ride_sharing);
-    // console.log(data);
-    // console.log(data.ride_sharing);
-    // console.log(data.ride_sharing[rideType]);
-    // console.log(data.ride_sharing[rideType].details);
-    // console.log(data.ride_sharing[rideType].details.ride_sharing);
-    // console.log(data.ride_sharing[rideType].details.ride_sharing[1]);
-    // console.log(data.ride_sharing[rideType].details.ride_sharing[0].ride_name);
     $scope.mode = data.ride_sharing[rideType].travel_type;
     $scope.totalETA = data.ride_sharing[rideType].eta;
 

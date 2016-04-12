@@ -31,9 +31,11 @@ html {
     color: red;
     display: inline-block; }
     .ridesharing-costs .ridesharing-special .fa-exclamation-circle {
+      display: inline-block;
       margin-left: 10px;
       margin-right: 3px; }
     .ridesharing-costs .ridesharing-special .fa-info-circle {
+      display: inline-block;
       vertical-align: top;
       font-size: .9em;
       margin-left: 2px;
