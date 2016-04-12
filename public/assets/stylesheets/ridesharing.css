@@ -31,67 +31,56 @@ html {
     color: red;
     display: inline-block; }
     .ridesharing-costs .ridesharing-special .fa-exclamation-circle {
+      display: inline-block;
       margin-left: 10px;
       margin-right: 3px; }
     .ridesharing-costs .ridesharing-special .fa-info-circle {
+      display: inline-block;
       vertical-align: top;
       font-size: .9em;
       margin-left: 2px;
       color: black; }
-  .ridesharing-costs .ridesharing-cost-title {
+  .ridesharing-costs .ridesharing-cost-list {
+    margin-top: 5%; }
+  .ridesharing-costs .ridesharing-cost-list.hide {
+    display: none; }
+  .ridesharing-costs .ridesharing-type-title {
     display: inline-block;
     font-size: 3em;
     font-weight: 500; }
-  .ridesharing-costs .ridesharing-car-3 {
-    border: none; }
-  .ridesharing-costs li {
+  .ridesharing-costs .ridesharing-eta {
     padding-top: 5px;
     padding-bottom: 2px;
-    border-bottom: 3px solid gray;
     font-size: 1.5em; }
-    .ridesharing-costs li h3 {
+    .ridesharing-costs .ridesharing-eta h3 {
       display: inline-block;
       width: 49%; }
-    .ridesharing-costs li p {
+    .ridesharing-costs .ridesharing-eta p {
       font-weight: 600;
       display: inline-block;
       width: 49%;
       text-align: right; }
-      .ridesharing-costs li p small {
-        font-size: .6em;
-        vertical-align: top; }
-    .ridesharing-costs li h2 {
+    .ridesharing-costs .ridesharing-eta h2 {
       font-size: 1em;
       width: 49%;
       display: inline-block; }
-
-.ridesharing-eta {
-  margin-top: 5%;
-  width: 100%; }
-  .ridesharing-eta .ridesharing-eta-title {
-    font-size: 3em;
-    font-weight: 500; }
-  .ridesharing-eta .ridesharing-total-eta {
-    border: none; }
-  .ridesharing-eta li {
-    padding-top: 5px;
-    padding-bottom: 2px;
+  .ridesharing-costs .ridesharing-eta.line, .ridesharing-costs .ridesharing-cost {
+    font-size: 1em;
+    border-bottom: 3px solid gray; }
+  .ridesharing-costs .ridesharing-cost {
     border-bottom: 3px solid gray;
     font-size: 1.5em; }
-    .ridesharing-eta li h3 {
+    .ridesharing-costs .ridesharing-cost h3 {
       display: inline-block;
       width: 49%; }
-    .ridesharing-eta li p {
+    .ridesharing-costs .ridesharing-cost p {
       font-weight: 600;
       display: inline-block;
       width: 49%;
       text-align: right; }
-    .ridesharing-eta li h2 {
-      font-size: 1.5em;
-      width: 49%;
-      display: inline-block; }
-    .ridesharing-eta li .ridesharing-total-min {
-      font-size: 1.5em; }
+    .ridesharing-costs .ridesharing-cost small {
+      font-size: .6em;
+      vertical-align: top; }
 
 .ridesharing-go {
   margin-top: 5%;
