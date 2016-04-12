@@ -72,13 +72,14 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'ma
 
  $scope.farefairy = [];
      var handleSuccess = function(data, status) {
-         $scope.farefairy = data;
-         $scope.ridesharing = $scope.farefairy.ride_sharing;
-        //  $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
+        $scope.farefairy = data;
+        $scope.ridesharing = $scope.farefairy.ride_sharing;
+        // $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
         // $scope.publicTransit = $scope.farefairy.transit;
-        // $scope.taxi = $scope.farefairy.taxis[0];
-        // $scope.taxiDetail = $scope.farefairy.taxis[0].details.contact_info;
+        $scope.taxi = $scope.farefairy.taxis[0];
+        $scope.taxiNumber = $scope.farefairy.taxis[0].details.contact_info;
          console.log($scope.farefairy);
+         console.log($scope.farefairy.taxis[0].details.contact_info);
      };
 
      var handleSuccess2 = function(data, status) {

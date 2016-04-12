@@ -8,8 +8,9 @@
 
 <main class = "taxi-container">
   <h3 class = "local-taxi-title">Local Taxis</h3>
-  <ul ng-repeat "detail in taxiDetail" class = "local-taxis">
-    <li class = "taxi-number">{{detail.name}}</li>
-    <li class = "taxi-number">{{detail.phone}}</li>
+  <ul class = "local-taxis">
+    <li class = "taxi-name-container"><h3 class = "taxi-name">Taxi Company Name</h3><h3 class = "taxi-number">123-023-5234</h3></li>
+    <!-- <li class = "taxi-number">{{taxiNumber[0].phone}}</li> -->
+    <li class = "taxi-button-cont"><div class = "taxi-button">call</div></li>
   </ul>
 </main>
