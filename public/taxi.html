@@ -8,6 +8,6 @@
   <h3 class = "local-taxi-title">Local Taxis</h3>
   <ul ng-repeat = "number in taxiNumber" class = "local-taxis">
     <li class = "taxi-name-container"><h3 class = "taxi-name">{{number.name}}</h3><h3 class = "taxi-number">{{number.phone}}</h3></li>
-    <li class = "taxi-button-cont"><a href = {{number.phone}} ><div class = "taxi-button">call</div></a></li>
+    <li class = "taxi-button-cont"><a href = tel:{{number.phone}} ><div class = "taxi-button">call</div></a></li>
   </ul>
 </main>
