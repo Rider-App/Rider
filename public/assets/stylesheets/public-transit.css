@@ -1,0 +1,17 @@
+.public-transit-header {
+  width: 100%;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); }
+
+.bus-icon {
+  margin: 10px;
+  display: inline-block; }
+  .bus-icon .fa-bus {
+    color: #ffb000; }
+
+.public-transit-title {
+  font-size: 6em;
+  font-weight: 500;
+  display: inline-block;
+  width: 60%; }
+
+/*# sourceMappingURL=public-transit.css.map */

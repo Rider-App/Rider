@@ -1,6 +1,6 @@
 <div ng-controller = "mainController" class = "home-map-container">
 
-<section ng-controller = "farefairyController" class = "home-container" ng-controller = "mainController">
+<section class = "home-container" ng-controller = "mainController">
   <div class = "login-modal-cont">
       <button class="login-modal-x">x</button>
       <input id = "login-email-input" type="text" placeholder="email"/>
@@ -11,7 +11,7 @@
 
   <label class = "home-search-label">Start</label>
   <aside class = "home-favorites">favorites</aside>
-  <i class="fa fa-map-marker fa-2x"></i>
+  <i ng-click = "geoLocation()" class="fa fa-map-marker fa-2x"></i>
   <input id="searchTextField" class = "home-searchbox" type="text" placeholder = "">
   <label class = "home-search-label">Destination</label>
   <aside class = "home-favorites">favorites</aside>
