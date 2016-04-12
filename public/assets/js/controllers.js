@@ -1,4 +1,4 @@
-/doesn't work unless it's in a controller
+//doesn't work unless it's in a controller
 //----GLOBAL-VARIABLES----
 var rideType;
 
@@ -112,7 +112,6 @@ $scope.farefairy = [];
  $('.fa-info-circle').on('click', function () {
    $('.special-consid-modal').toggleClass('show');
  });
-
 
 }]);//End farefairycontroller
 
