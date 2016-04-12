@@ -4,7 +4,7 @@ var rideType;
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
-  // geolocation API
+//-GOOGLE-MAPS-GEOLOCATION-------------------
  $scope.geoLocation = function(){
 
  navigator.geolocation.getCurrentPosition(function(position) {
@@ -46,7 +46,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 riderApp.factory('mainInfo', function($http){
 var factory = {};
 factory.getSessions = function(origin, destination){
- return $http.get('https://farefairy.herokuapp.com/?origin=' + origin + '&destination=' + destination);
+ return $http.get('https://farefairy.herokuapp.com/api/v1/fares?origin=' + origin + '&destination=' + destination);
 };
 return factory;
 });//end factory
@@ -78,8 +78,8 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'ma
         // $scope.publicTransit = $scope.farefairy.transit;
         $scope.taxi = $scope.farefairy.taxis[0];
         $scope.taxiNumber = $scope.farefairy.taxis[0].details.contact_info;
-         console.log($scope.farefairy);
-         console.log($scope.farefairy.taxis[0].details.contact_info);
+         console.log($scope.taxiNumber)
+        //  console.log($scope.farefairy.taxis[0].details.contact_info);
      };
 
      var handleSuccess2 = function(data, status) {
@@ -122,7 +122,7 @@ riderApp.controller('rideSharingController', ['$http', '$scope', '$farefairycont
 
  $(".ridesharing-special").hide();//Hide special_considerations warning
 
- $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
+ $http.get('https://farefairy.herokuapp.com/api/v1/fares?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
    $scope.farefairy = data;
 
    $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
@@ -141,7 +141,7 @@ riderApp.controller('rideSharingController', ['$http', '$scope', '$farefairycont
 
    $scope.mode = data.ride_sharing[rideType].travel_type;
    $scope.totalETA = data.ride_sharing[rideType].eta;
-   console.log(data);
+  //  console.log(data);
  })
 
 }]);//end ridesharing controller
@@ -167,3 +167,30 @@ riderApp.controller('mapController', [ '$http', '$scope', function($http, $scope
  }
  google.maps.event.addDomListener(window, 'load', initMap);
 }]);
+
+//--SIGNUP-------------------------------------
+
+riderApp.controller('userController', ['$http', '$scope', function($http, $scope){
+
+$scope.signUp = function(){
+
+  var email = $('#signup-email').val();
+  var password = $('#signup-password').val();
+
+  $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]' + email + '&user[password]=' + password, data).success(function(data){
+    console.log($scope.account);
+    console.log(email);
+    console.log(password);
+  })
+
+} //closes signUp function
+
+// localStorage.setItem('user', JSON.stringify({
+//     username: 'htmldog',
+//     api_key: 'abc123xyz789'
+// }));
+//
+// var user = JSON.parse(localStorage.getItem('user'));
+
+
+}]); //closes userController
