@@ -75,10 +75,11 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'ma
         $scope.farefairy = data;
         $scope.ridesharing = $scope.farefairy.ride_sharing;
         // $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
-        // $scope.publicTransit = $scope.farefairy.transit;
+        $scope.publicTransit = $scope.farefairy.transit;
         $scope.taxi = $scope.farefairy.taxis[0];
         $scope.taxiNumber = $scope.farefairy.taxis[0].details.contact_info;
-         console.log($scope.taxiNumber)
+        console.log($scope.publicTransit[0].travel_type);
+        //  console.log($scope.taxiNumber)
         //  console.log($scope.farefairy.taxis[0].details.contact_info);
      };
 
@@ -92,7 +93,7 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'ma
        var destinationAddress = $("#searchTextFieldTwo").val();
        console.log(originAddress);
        console.log(destinationAddress);
-       console.log("hahaJones");
+      //  console.log("hahaJones");
      mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess);
      mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess2);
      //Asynchronous loading courtesy of stack overflow: http://stackoverflow.com/questions/16227644/angularjs-factory-http-service

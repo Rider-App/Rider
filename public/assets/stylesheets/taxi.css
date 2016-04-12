@@ -16,12 +16,14 @@
 
 .taxi-container {
   margin-top: 5%;
-  margin-bottom: 5%; }
+  margin-bottom: 5%;
+  margin-right: 0; }
   .taxi-container .local-taxi-title {
     margin-left: 8px;
     font-size: 2em;
     margin-bottom: 5px; }
   .taxi-container .taxi-name-container {
+    margin-right: 0;
     width: 80%;
     display: inline-block;
     font-size: 1.4em;
@@ -38,8 +40,9 @@
       padding-bottom: 10px;
       border-bottom: 3px solid gray; }
   .taxi-container .taxi-button-cont {
+    margin-right: 0;
     display: inline-block;
-    width: 15%; }
+    width: 10%; }
   .taxi-container .taxi-button {
     font-size: 1.4em;
     text-align: center;
@@ -48,5 +51,7 @@
     height: 1.5em;
     color: white;
     background-color: #57b74d; }
+  .taxi-container a {
+    text-decoration: none; }
 
 /*# sourceMappingURL=taxi.css.map */
