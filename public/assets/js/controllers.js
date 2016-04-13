@@ -43,13 +43,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
  // var originAddress = $scope.input1;
  // var destinationAddress = $scope.input2;
 
-riderApp.factory('mainInfo', function($http){
-var factory = {};
-factory.getSessions = function(origin, destination){
- return $http.get('https://farefairy.herokuapp.com/?origin=' + origin + '&destination=' + destination);
-};
-return factory;
-});//end factory
+
 
 riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'mainInfo', function($http, $scope, $location, mainInfo){
 
@@ -86,16 +80,32 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'ma
          console.log($scope.farefairy);
      };
 
-     $scope.print = function(input1, input2){
-       var originAddress = $("#searchTextField").val();
-       var destinationAddress = $("#searchTextFieldTwo").val();
-       console.log(originAddress);
-       console.log(destinationAddress);
-       console.log("hahaJones");
-     mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess);
-     mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess2);
-     //Asynchronous loading courtesy of stack overflow: http://stackoverflow.com/questions/16227644/angularjs-factory-http-service
-     };
+    // var originAddress = $("#searchTextField").val();
+    // var destinationAddress = $("#searchTextFieldTwo").val();
+    var originAddress = "RDU International Airport, John Brantley Boulevard, Morrisville, NC, United States";
+    var destinationAddress = "800 Blackwell Street, Durham, NC, United States";
+    mainInfo.setOrigin(originAddress);
+    mainInfo.setDestination(destinationAddress);
+    mainInfo.getSessions().success(mainInfo.setFarefairy);//this one works
+    mainInfo.getSessions().success(mainInfo.getFarefairy);
+    // console.log(mainInfo.getFarefairy());//returns empty array
+
+    // console.log(mainInfo.getOrigin());
+    // console.log(mainInfo.getDestination());
+
+    // mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess);
+    // mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess2);
+
+    //  $scope.print = function(input1, input2){
+      //  var originAddress = $("#searchTextField").val();
+      //  var destinationAddress = $("#searchTextFieldTwo").val();
+    //    console.log(originAddress);
+    //    console.log(destinationAddress);
+    //    console.log("hahaJones");
+    //  mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess);
+    //  mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess2);
+    //  //Asynchronous loading courtesy of stack overflow: http://stackoverflow.com/questions/16227644/angularjs-factory-http-service
+    //  };
 
   //here lies http get.
   // $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
@@ -117,31 +127,32 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'ma
 
 }]);//End farefairycontroller
 
-riderApp.controller('rideSharingController', ['$http', '$scope', '$farefairycontroller', function($http, $scope, farefairyController){
+riderApp.controller('rideSharingController', ['$http', '$scope', 'mainInfo', function($http, $scope, mainInfo){
+  // console.log(stuffJones);
 
  $(".ridesharing-special").hide();//Hide special_considerations warning
 
- $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
-   $scope.farefairy = data;
-
-   $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
-   //NG Repeat for the detail cost section.
-
-   //Determination for SURGE PRICING
-   var surgePricing = $scope.farefairy.ride_sharing[rideType].details.special_considerations;
-   if(surgePricing === "surge pricing"){
-     $(".ridesharing-special").show();
-     $(".special-considerations-text").html("Surge Pricing");
-   }
-   else if(surgePricing === "prime time"){
-     $(".ridesharing-special").show();
-     $(".special-considerations-text").html("Prime Time");
-   }
-
-   $scope.mode = data.ride_sharing[rideType].travel_type;
-   $scope.totalETA = data.ride_sharing[rideType].eta;
-   console.log(data);
- })
+ // $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
+ //   $scope.farefairy = data;
+ //
+ //   $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
+ //   //NG Repeat for the detail cost section.
+ //
+ //   //Determination for SURGE PRICING
+ //   var surgePricing = $scope.farefairy.ride_sharing[rideType].details.special_considerations;
+ //   if(surgePricing === "surge pricing"){
+ //     $(".ridesharing-special").show();
+ //     $(".special-considerations-text").html("Surge Pricing");
+ //   }
+ //   else if(surgePricing === "prime time"){
+ //     $(".ridesharing-special").show();
+ //     $(".special-considerations-text").html("Prime Time");
+ //   }
+ //
+ //   $scope.mode = data.ride_sharing[rideType].travel_type;
+ //   $scope.totalETA = data.ride_sharing[rideType].eta;
+ //   console.log(data);
+ // })
 
 }]);//end ridesharing controller
 
