@@ -32,11 +32,6 @@ riderApp.factory('mainInfo', function($http){
   var destination = "";
   var farefairy = {};
 
-  factory.handleSuccess2 = function(data, status) {
-    var farefairy = data;
-    console.log(farefairy);
-  };
-
   factory.setOrigin = function(originAddress){
     origin = originAddress;
   };
@@ -54,17 +49,16 @@ riderApp.factory('mainInfo', function($http){
   };
 
   factory.setFarefairy = function(data, status) {
-    this.farefairy = data;
-    console.log(this.farefairy);
-    return this.farefairy;
+    // console.log(arguments);
+    farefairy = data;
+    // console.log(farefairy);
 
     // $scope.ridesharing = $scope.farefairy.ride_sharing;
     // console.log($scope.farefairy);
   };
 
   factory.getFarefairy = function(){
-    console.log(this.farefairy);
-    return this.farefairy;
+    return farefairy;
   }
 
   // factory.getFairy = function (origin, destination) {
