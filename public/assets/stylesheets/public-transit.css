@@ -1,3 +1,7 @@
+html {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 12pt; }
+
 .public-transit-header {
   width: 100%;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); }
@@ -6,12 +10,47 @@
   margin: 10px;
   display: inline-block; }
   .bus-icon .fa-bus {
-    color: #ffb000; }
+    color: black; }
 
 .public-transit-title {
   font-size: 6em;
   font-weight: 500;
   display: inline-block;
   width: 60%; }
+
+.public-transit-main {
+  margin-top: 5%;
+  margin-left: 8px;
+  width: 100%; }
+
+.public-transit-options h2 {
+  font-size: 2em;
+  margin-bottom: 5%; }
+
+.bus-name {
+  font-size: 1.5em;
+  width: 35%;
+  display: inline-block;
+  border-bottom: 3px solid gray; }
+
+.bus-eta {
+  text-align: right;
+  font-size: 1.5em;
+  width: 60%;
+  display: inline-block;
+  border-bottom: 3px solid gray; }
+
+.transit-get-directions {
+  width: 60%;
+  height: 40px;
+  padding-top: 10px;
+  background-color: white;
+  color: #23c254;
+  font-size: 2em;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 15%;
+  border-radius: 5px;
+  border: 3px solid #462d28; }
 
 /*# sourceMappingURL=public-transit.css.map */

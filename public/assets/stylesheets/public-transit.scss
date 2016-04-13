@@ -1,3 +1,10 @@
+$font: 'Helvetica Neue', 'Helvetica', sans-serif;
+
+html {
+  font-family: $font;
+  font-size: 12pt;
+}
+
 .public-transit-header{
   width: 100%;
   box-shadow: 0px 5px 20px rgba(0,0,0,.3);
@@ -8,7 +15,7 @@
   display: inline-block;
 
   .fa-bus{
-    color: rgb(255, 176, 0);
+    color: black;
   }
 
 }
@@ -19,4 +26,46 @@
   font-weight: 500;
   display: inline-block;
   width: 60%;
+}
+
+.public-transit-main{
+  margin-top: 5%;
+  margin-left: 8px;
+  width: 100%;
+
+}
+
+.public-transit-options h2{
+  font-size: 2em;
+  margin-bottom: 5%;
+}
+
+.bus-name {
+ font-size: 1.5em;
+ width: 35%;
+ display: inline-block;
+ border-bottom: 3px solid rgb(128,128,128);
+}
+
+.bus-eta{
+  text-align: right;
+  font-size: 1.5em;
+  width: 60%;
+  display: inline-block;
+  border-bottom: 3px solid rgb(128,128,128);
+}
+
+.transit-get-directions{
+  width: 60%;
+  height: 40px;
+  padding-top: 10px;
+  background-color: white;
+  color: rgb(35,194,84);
+  font-size: 2em;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 15%;
+  border-radius: 5px;
+  border: 3px solid rgb(70,45,40);
+
 }

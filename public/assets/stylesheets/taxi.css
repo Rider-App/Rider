@@ -15,15 +15,18 @@
   width: 60%; }
 
 .taxi-container {
+  width: 100%;
   margin-top: 5%;
   margin-bottom: 5%; }
   .taxi-container .local-taxi-title {
     margin-left: 8px;
     font-size: 2em;
     margin-bottom: 5px; }
+  .taxi-container .local-taxis {
+    width: 100%; }
   .taxi-container .taxi-name-container {
-    margin-right: 0;
-    width: 80%;
+    border: 1px solid black;
+    width: 70%;
     display: inline-block;
     font-size: 1.2em;
     margin-top: 5px;
@@ -34,18 +37,20 @@
       padding-bottom: 10px;
       border-bottom: 3px solid gray; }
     .taxi-container .taxi-name-container .taxi-number {
+      border: 1px solid black;
       display: inline-block;
-      width: 20%;
+      width: 30%;
       padding-bottom: 10px;
       border-bottom: 3px solid gray; }
   .taxi-container .taxi-button-cont {
+    border: 1px solid black;
     display: inline-block;
-    width: 15%; }
+    width: 20%; }
   .taxi-container .taxi-button {
     font-size: 1.2em;
     text-align: center;
     padding-top: 10px;
-    width: 100px;
+    width: 100%;
     height: 1.5em;
     color: white;
     background-color: #57b74d; }

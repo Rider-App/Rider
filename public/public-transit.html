@@ -1,9 +1,17 @@
 
   <header class = "public-transit-header">
     <div class = "bus-icon"> <i class="fa fa-bus fa-5x" aria-hidden="true"></i></div>
-    <h1 class = "public-transit-title">{{publicTransit[0].travel_type}}</h1>
+    <!-- <h1 class = "public-transit-title">{{publicTransit[0].travel_type}}</h1> -->
+    <h1 class = "public-transit-title">Bus</h1>
   </header>
 
-  <main class = "public-transit-main">
+  <!-- <div ng-controller="mapController" id="map"></div> -->
 
+  <main class = "public-transit-main">
+    <ul ng-repeat = "transport in publicTransport" class = "public-transit-options"><h2>{{publicTransit[0].travel_type}} Options</h2><ul>
+      <li class = "bus-name">{{transport.short_name}}</li>
+      <li class = "bus-eta">Total ETA: {{transport.total_eta}}</li>
+    </ul>
   </main>
+
+  <div class = "transit-get-directions">Get Directions</div>
