@@ -71,6 +71,11 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$t
         $scope.taxi = $scope.farefairy.taxis[0];
         google.maps.event.addDomListener(window, 'load', mainInfo.initMap());
 
+        //This if statement is questionable. I'm not sure it does anything right now.
+        if($(".travel-type").html === ""){
+          $(".travel-type").html("N/A");
+        };
+
       });//end .then
     }//end api call
 
