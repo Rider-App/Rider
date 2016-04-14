@@ -44,12 +44,12 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 
 
 riderApp.factory('mainInfo', function($http){
-var factory = {};
-factory.getSessions = function(origin, destination){
- return $http.get('https://farefairy.herokuapp.com/api/v1/fares?origin=' + origin + '&destination=' + destination);
-};
-return factory;
-});//end factory
+  var factory = {};
+  factory.getSessions = function(origin, destination){
+   return $http.get('https://farefairy.herokuapp.com/api/v1/fares?origin=' + origin + '&destination=' + destination);
+  };
+  return factory;
+  });//end factory
 
 riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'mainInfo', function($http, $scope, $location, mainInfo){
 
@@ -66,7 +66,7 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', 'ma
      var handleSuccess = function(data, status) {
         $scope.farefairy = data;
         $scope.ridesharing = $scope.farefairy.ride_sharing;
-        $scope.rideName = $scope.ridesharing.[rideType].details.ride_sharing;
+        // $scope.rideName = $scope.ridesharing.[rideType].details.ride_sharing;
         $scope.publicTransit = $scope.farefairy.transit;
         $scope.publicTransport = $scope.publicTransit[0].details.transit;
         $scope.taxi = $scope.farefairy.taxis[0];
@@ -121,7 +121,7 @@ riderApp.controller('rideSharingController', ['$http', '$scope', '$farefairycont
 
    $scope.mode = data.ride_sharing[rideType].travel_type;
    $scope.totalETA = data.ride_sharing[rideType].eta;
-   
+
  })
 
 }]);//end ridesharing controller
@@ -152,18 +152,32 @@ riderApp.controller('mapController', [ '$http', '$scope', function($http, $scope
 
 riderApp.controller('userController', ['$http', '$scope', function($http, $scope){
 
-$scope.signUp = function(){
+  $scope.formData = {
+    "email" : "",
+    "password" : ""
+  }
 
-  var email = $('#signup-email').val();
-  var password = $('#signup-password').val();
+  $scope.signUp = function(formData){
 
-  $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]' + email + '&user[password]=' + password, data).success(function(data){
-    console.log($scope.account);
-    console.log(email);
-    console.log(password);
+  $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]=' + $('#signup-email').val() + '&user[password]=' + $('#signup-password').val()).success(function(info){
+    console.log("please work again");
+    console.log(info);
+
   })
 
+
 } //closes signUp function
+
+// var email = $('#signup-email').val();
+// var password = $('#signup-password').val();
+//
+// $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]' + email + '&user[password]=' + password, userAccount).success(function(info){
+//   $scope.user = info;
+//   console.log($scope.account);
+//   console.log(email);
+//   console.log(password);
+// })
+
 
 // localStorage.setItem('user', JSON.stringify({
 //     username: 'htmldog',
