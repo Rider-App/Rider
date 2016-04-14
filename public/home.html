@@ -1,21 +1,22 @@
 <div ng-controller = "mainController" class = "home-map-container">
 
 
-<section class = "home-container" ng-controller = "mainController">
-  <div class = "login-modal-cont">
-      <button class="login-modal-x">x</button>
-      <input id = "login-email-input" type="text" placeholder="email"/>
-      <input id = "login-pwd-input" type="text" placeholder="password"/>
-      <div class = "login-submit-btn">send</div>
-  </div> <!-- closes modal-container -->
+  <div ng-controller = "userController">
+      <!-- {{loginData}} -->
+      <section class = "home-container">
+        <form class = "login-modal-cont" ng-submit = "signIn()" method: "post">
+            <button class="login-modal-x">x</button>
+            <input ng-model = "loginData.email" id = "login-email-input" type="text" placeholder="email"/>
+            <input ng-model = "loginData.password" id = "login-pwd-input" type="text" placeholder="password"/>
+            <button type = "submit" class = "login-btn"><div class = "login-submit-btn">send</div></button>
+        </form> <!-- closes modal-container -->
 
-<!-- <form ng-submit="addressSubmit()"> -->
   <label class = "home-search-label">Start</label>
-  <aside class = "home-favorites">favorites</aside>
+  <aside class = "home-favorites"></aside>
   <i ng-click = "geoLocation()" class="fa fa-map-marker fa-2x"></i>
   <input id="searchTextField" class = "home-searchbox" type="text" placeholder = "">
   <label class = "home-search-label">Destination</label>
-  <aside class = "home-favorites">favorites</aside>
+  <aside class = "home-favorites"></aside>
   <i class="fa fa-map-marker fa-2x"></i>
   <input id="searchTextFieldTwo" ng-model="input2" class = "home-searchbox" type="text" placeholder = "">
 
@@ -73,5 +74,5 @@
 
 
 <a class = "home-learn-link" href = "#/LearnMore"><div class = "home-learn-more">Learn More</div></a>
-
+</div> <!-- end userController -->
 </div>

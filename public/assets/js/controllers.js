@@ -40,10 +40,6 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
    });
 
 }]);//-END-MAIN-CONTROLLER----------------------
- // var originAddress = $scope.input1;
- // var destinationAddress = $scope.input2;
-
-
 
 riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$timeout', 'mainInfo', function($http, $scope, $location, $timeout, mainInfo){
 
@@ -79,14 +75,6 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$t
       });//end .then
     }//end api call
 
-    //  $scope.print = function(input1, input2){
-    //  var originAddress = $("#searchTextField").val();
-    //  var destinationAddress = $("#searchTextFieldTwo").val();
-    //  mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess);
-    //  mainInfo.getSessions(originAddress, destinationAddress).success(handleSuccess2);
-    //  //Asynchronous loading courtesy of stack overflow: http://stackoverflow.com/questions/16227644/angularjs-factory-http-service
-    //  };
-
   $('.fa-info-circle').on('click', function () {
     $('.special-consid-modal').toggleClass('show');
   });
@@ -118,30 +106,6 @@ riderApp.controller('rideSharingController', ['$http', '$scope', 'mainInfo', fun
        console.log($scope.taxiNumber);
        $scope.totalETA = $scope.farefairy.ride_sharing[1].eta;
        $scope.mode = $scope.farefairy.ride_sharing[1].travel_type;
-
-
- // $http.get('https://farefairy.herokuapp.com/?origin=' + originAddress + '&destination=' + destinationAddress, {cache: true}).success(function(data){
- //   $scope.farefairy = data;
- //
- //   $scope.rideName = $scope.farefairy.ride_sharing[rideType].details.ride_sharing;
- //   //NG Repeat for the detail cost section.
- //
- //   //Determination for SURGE PRICING
- //   var surgePricing = $scope.farefairy.ride_sharing[rideType].details.special_considerations;
- //   if(surgePricing === "surge pricing"){
- //     $(".ridesharing-special").show();
- //     $(".special-considerations-text").html("Surge Pricing");
- //   }
- //   else if(surgePricing === "prime time"){
- //     $(".ridesharing-special").show();
- //     $(".special-considerations-text").html("Prime Time");
- //   }
- //
- //   $scope.mode = data.ride_sharing[rideType].travel_type;
-  //  $scope.totalETA = data.ride_sharing[rideType].eta;
- //   console.log(data);
- // })
-
 }]);//end ridesharing controller
 
 riderApp.controller('ratesController', ['$http', '$scope', function($http, $scope){
@@ -150,66 +114,53 @@ riderApp.controller('ratesController', ['$http', '$scope', function($http, $scop
 }])
 
 
-riderApp.controller('mapController', [ '$http', '$scope', 'mainInfo', function($http, $scope, mainInfo){
-
- // function initMap () {
- //   var latlng = new google.maps.LatLng(-34.397, 150.644);
- //   var chicago = {lat: 35.9847617302915, lng: -78.91083471970849};
- //   var indianapolis = {lat: 39.79, lng: -86.14};
- //   var myOptions = {
- //     zoom: 8,
- //     center: latlng,
- //     mapTypeId: google.maps.MapTypeId.ROADMAP
- //   };
- //   var map = new google.maps.Map(document.getElementById('map'), {
- //     center: chicago,
- //     zoom: 8
- //   });
- //   var directionsDisplay = new google.maps.DirectionsRenderer({
- //    map: map
- //   });
- //   // Set destination, origin and travel mode.
- //    var request = {
- //      destination: indianapolis,
- //      origin: chicago,
- //      travelMode: google.maps.TravelMode.DRIVING
- //    };
- //
- //    // Pass the directions request to the directions service.
- //    var directionsService = new google.maps.DirectionsService();
- //    directionsService.route(request, function(response, status) {
- //      if (status == google.maps.DirectionsStatus.OK) {
- //        // Display the route on the map.
- //        directionsDisplay.setDirections(response);
- //      }
- //    });
- // }
- // google.maps.event.addDomListener(window, 'load', mainInfo.initMap());
-}]);//end map controller
-
-
 //--SIGNUP-------------------------------------
 
 riderApp.controller('userController', ['$http', '$scope', function($http, $scope){
 
-$scope.signUp = function(){
+  $scope.formData = {
+    "email" : "",
+    "password" : ""
+  }
 
-  var email = $('#signup-email').val();
-  var password = $('#signup-password').val();
+  $scope.signUp = function(formData){
 
-  $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]' + email + '&user[password]=' + password, data).success(function(data){
-    console.log($scope.account);
-    console.log(email);
-    console.log(password);
+  $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]=' + $('#signup-email').val() + '&user[password]=' + $('#signup-password').val()).success(function(info){
+    console.log(info.token, info.user_id);
+    localStorage.setItem('token', info.token);
+    localStorage.setItem('user_id', info.user_id);
   })
 
-} //closes signUp function
+  } //closes signUp function
 
-// localStorage.setItem('user', JSON.stringify({
-//     username: 'htmldog',
-//     api_key: 'abc123xyz789'
-// }));
-//
+  $scope.loginData = {
+    "email" : "",
+    "password" : ""
+  }
+
+  $scope.signIn = function(loginData){
+
+  $http.post('https://farefairy.herokuapp.com/api/v1/login?email=' + $('#login-email-input').val()  + '&password=' + $('#login-pwd-input').val()).success(function(data){
+    console.log(data.user_id, data.user_id);
+    localStorage.setItem('token_login', data.token);
+    localStorage.setItem('user_id_login', data.user_id);
+
+    $('.header-left').html("log out");
+
+  }) //closes signIn http post
+
+  } //closes signIn function
+
+  if ($('.header-left').html() === "log out"){
+    $('.header-left').click(function(){
+      // localStorage.getItem('token_login', data.token);
+
+      // $http.delete('https://farefairy.herokuapp.com/api/v1/logout?token=' + data.token)
+      // console.log(data.token);
+    })
+  } else {
+  }
+
 // var user = JSON.parse(localStorage.getItem('user'));
 
 

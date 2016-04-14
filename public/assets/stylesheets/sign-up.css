@@ -24,15 +24,16 @@ html {
   border-radius: 5px; }
 
 .signup-button {
-  width: 60%;
-  height: 40px;
+  width: 100%;
   padding-top: 5px;
   background-color: #23c254;
   color: white;
   font-size: 2em;
   text-align: center;
-  margin-left: 20%;
-  margin-right: 15%;
   border-radius: 5px; }
+
+.signup-btn-container {
+  margin-left: 40%; }
+
 
 /*# sourceMappingURL=sign-up.css.map */
