@@ -140,9 +140,18 @@ input::-webkit-input-placeholder {
     margin-top: 10px;
   }
 
-  .login-submit-btn {
-    @extend .home-learn-more;
+  .login-btn{
+    width: 60%;
+    height: 40px;
+    background-color: white;
+    color: rgb(35,194,84);
+    font-size: 2em;
+    text-align: center;
     margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 15%;
+    border-radius: 5px;
+    border: none;
   }
 
   .login-modal-x{

@@ -160,30 +160,43 @@ riderApp.controller('userController', ['$http', '$scope', function($http, $scope
   $scope.signUp = function(formData){
 
   $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]=' + $('#signup-email').val() + '&user[password]=' + $('#signup-password').val()).success(function(info){
-    console.log("please work again");
-    console.log(info);
-
+    console.log(info.token, info.user_id);
+    localStorage.setItem('token', info.token);
+    localStorage.setItem('user_id', info.user_id);
   })
 
+  } //closes signUp function
 
-} //closes signUp function
+  $scope.loginData = {
+    "email" : "",
+    "password" : ""
+  }
 
-// var email = $('#signup-email').val();
-// var password = $('#signup-password').val();
-//
-// $http.post('https://farefairy.herokuapp.com/api/v1/users?user[email]' + email + '&user[password]=' + password, userAccount).success(function(info){
-//   $scope.user = info;
-//   console.log($scope.account);
-//   console.log(email);
-//   console.log(password);
-// })
+  $scope.signIn = function(loginData){
+
+  $http.post('https://farefairy.herokuapp.com/api/v1/login?email=' + $('#login-email-input').val()  + '&password=' + $('#login-pwd-input').val()).success(function(data){
+    console.log(data.user_id, data.user_id);
+    localStorage.setItem('token_login', data.token);
+    localStorage.setItem('user_id_login', data.user_id);
+
+    $('.header-left').html("log out");
+
+  }) //closes signIn http post
+
+  } //closes signIn function
+
+  if ($('.header-left').html() === "log out"){
+    $('.header-left').click(function(){
+      // localStorage.getItem('token_login', data.token);
+
+      // $http.delete('https://farefairy.herokuapp.com/api/v1/logout?token=' + data.token)
+      // console.log(data.token);
+    })
+  } else {
+  }
 
 
-// localStorage.setItem('user', JSON.stringify({
-//     username: 'htmldog',
-//     api_key: 'abc123xyz789'
-// }));
-//
+
 // var user = JSON.parse(localStorage.getItem('user'));
 
 

@@ -23,7 +23,7 @@
     </head>
       <!-- define angular controller -->
     <body ng-controller="farefairyController">
-      <header>
+      <header ng-controller = "userController">
         <div class="header-container">
           <div class="header-left">login</div>
             <a href ="#/"><div class="rider-logo">
@@ -79,10 +79,12 @@
           <ul class = "ham-nav">
             <li><a class = "ham-link" href = "#/LearnMore">Learn More</a></li>
             <li><a class = "ham-link" href = "#/">New Request</a></li>
+            <li><a class = "ham-link" href = "#/SignUp">Sign Up</a></li>
+
             <li>Social Media</li>
           </ul>
         </aside>
-      </header>
+      </header ng-controller = "userController">
         <ng-view></ng-view>
     </body>
 </html>
