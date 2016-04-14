@@ -22,7 +22,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
    var autocompleteTwo = new google.maps.places.Autocomplete(inputDest);
  }
 
- google.maps.event.addDomListener(window, 'load', init);
+ google.maps.event.addDomListener(window, 'load', init());
  // $scope.$apply();
 
  //--LOGIN-MODAL-FUNCTIONS---------------------
@@ -194,8 +194,6 @@ riderApp.controller('userController', ['$http', '$scope', function($http, $scope
     })
   } else {
   }
-
-
 
 // var user = JSON.parse(localStorage.getItem('user'));
 
