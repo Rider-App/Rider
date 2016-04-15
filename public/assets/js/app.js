@@ -1,5 +1,9 @@
 var riderApp = angular.module('riderApp', ['ngRoute']);
 
+riderApp.config( ['$compileProvider', function( $compileProvider ){
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|chrome-extension|mailto|uber|lyft):/);
+}]);
+
 riderApp.config(function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -101,3 +105,14 @@ riderApp.factory('mainInfo', function($http){
 
   return factory;
 });//end factory
+
+
+
+var isMobile= {
+   android: function () {
+     return navigator.userAgent.match(/Android/i);
+   },
+   iOS: function () {
+     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+   }
+ };

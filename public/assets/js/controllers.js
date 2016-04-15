@@ -97,15 +97,13 @@ riderApp.controller('rideSharingController', ['$http', '$scope', 'mainInfo', fun
      $scope.publicTransit = $scope.farefairy.transit;
      $scope.taxi = $scope.farefairy.taxis[0];
      $scope.taxiType = $scope.taxi.travel_type;
-     console.log($scope.taxi);
-     console.log($scope.taxiType);
 
-       $scope.rideName = $scope.ridesharing[1].details.ride_sharing;
+       $scope.rideName = $scope.ridesharing[rideType].details.ride_sharing;
        $scope.publicTransport = $scope.publicTransit[0].details.transit;
        $scope.taxiNumber = $scope.taxi.details.contact_info;
-       console.log($scope.taxiNumber);
-       $scope.totalETA = $scope.farefairy.ride_sharing[1].eta;
-       $scope.mode = $scope.farefairy.ride_sharing[1].travel_type;
+       $scope.totalETA = $scope.farefairy.ride_sharing[rideType].eta;
+       $scope.mode = $scope.farefairy.ride_sharing[rideType].travel_type;
+       $scope.deepLinking = $scope.farefairy.ride_sharing[rideType].start_journey_url;
 }]);//end ridesharing controller
 
 riderApp.controller('ratesController', ['$http', '$scope', function($http, $scope){
