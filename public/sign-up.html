@@ -1,0 +1,12 @@
+<div ng-controller = "userController">
+  <form ng-submit = "signUp()" method: "post" class = "signup-container">
+    <label class = "signup-label">Name</label>
+    <input ng-model = "formData.name" id = "signup-name" class = "signup-input">
+    <label class = "signup-label">Email</label>
+    <input ng-model = "formData.email" id = "signup-email" class = "signup-input">
+    <label class = "signup-label">Password</label>
+    <input ng-model = "formData.password" id = "signup-password" class = "signup-input" type="password" >
+    <button type = "submit" class = "signup-btn-container" > <div class = "signup-button">Sign Up</div></button>
+  </form>
+<!-- {{formData}} -->
+</div>

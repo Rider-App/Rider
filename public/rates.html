@@ -6,8 +6,8 @@
 </iframe> -->
 
 
-<div ng-controller="mapController" id="map"></div>
-<div ng-controller="farefairyController" class="container">
+<div id="map"></div>
+<div class="container">
   <div class="categories">
     <div class="mode">Mode</div>
     <div class="price">Price</div>
@@ -47,8 +47,82 @@
              <path class="st01" d="M33.6,54.4h48.8L61.3,75.6h19.9l28.2-28.2L81.1,19.2H61.3l21.1,21.1H33.6V54.4z"/>
              </svg>
          </a>
+  </div><!--  closes ng repeat for ridesharing -->
+
+  <div ng-repeat="transit in publicTransit" class="rates-item">
+    <div class="travel-type">{{transit.travel_type}}</div><!--
+ --><div class="rates-price"><div class="rate-dollar-sign">$</div>{{transit.price_min}}
+    &ndash;
+    {{transit.price_max}}</div><!--
+    --><div class="rate-eta"><!--
+    --><div class="rate-eta-number">{{transit.eta}}</div><!--
+     --><div class="rate-min">min</div>
+        </div>
+         <a href="#/PublicTransit" ng-click="clickedRideshare($index)" class="rates-arrow">
+             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 142.9 97.3" style="enable-background:new 0 0 142.9 97.3;" xml:space="preserve">
+             <style type="text/css">
+             .st01{fill:#FFFFFF;}
+             .st11{fill:#57B950;}
+             </style>
+             <g>
+             <path class="st01" d="M130.9-101.2H5.1c-3.3,0-6-2.7-6-6v-4.9c0-3.3,2.7-6,6-6h125.8c3.3,0,6,2.7,6,6v4.9
+             C136.9-103.9,134.2-101.2,130.9-101.2z"/>
+             <path class="st01" d="M130.9-75.3H5.1c-3.3,0-6-2.7-6-6v-4.9c0-3.3,2.7-6,6-6h125.8c3.3,0,6,2.7,6,6v4.9
+             C136.9-78,134.2-75.3,130.9-75.3z"/>
+             <path class="st01" d="M130.9-49.5H5.1c-3.3,0-6-2.7-6-6v-4.9c0-3.3,2.7-6,6-6h125.8c3.3,0,6,2.7,6,6v4.9
+             C136.9-52.1,134.2-49.5,130.9-49.5z"/>
+             </g>
+             <g>
+             <g>
+             <path class="st11" d="M137,1.6H5.9c-2,0-3.5,1.6-3.5,3.5v87c0,2,1.6,3.5,3.5,3.5h131c2,0,3.5-1.6,3.5-3.5v-87
+             C140.5,3.2,138.9,1.6,137,1.6z"/>
+             </g>
+             </g>
+             <path class="st01" d="M33.6,54.4h48.8L61.3,75.6h19.9l28.2-28.2L81.1,19.2H61.3l21.1,21.1H33.6V54.4z"/>
+             </svg>
+         </a>
+  </div> <!-- closes transit in publictransit -->
+
+
+  <div class="rates-item">
+    <div class="travel-type">{{taxi.travel_type}}</div><!--
+ --><div class="rates-price"><div class="rate-dollar-sign">$</div>{{taxi.price_min}}
+    &ndash;
+    {{taxi.price_max}}</div><!--
+    --><div class="rate-eta"><!--
+    --><div class="rate-eta-number">{{taxi.eta}}</div><!--
+     --><div class="rate-min">min</div>
+        </div>
+         <a href="#/Taxi" ng-click="clickedRideshare($index)" class="rates-arrow">
+             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 142.9 97.3" style="enable-background:new 0 0 142.9 97.3;" xml:space="preserve">
+             <style type="text/css">
+             .st01{fill:#FFFFFF;}
+             .st11{fill:#57B950;}
+             </style>
+             <g>
+             <path class="st01" d="M130.9-101.2H5.1c-3.3,0-6-2.7-6-6v-4.9c0-3.3,2.7-6,6-6h125.8c3.3,0,6,2.7,6,6v4.9
+             C136.9-103.9,134.2-101.2,130.9-101.2z"/>
+             <path class="st01" d="M130.9-75.3H5.1c-3.3,0-6-2.7-6-6v-4.9c0-3.3,2.7-6,6-6h125.8c3.3,0,6,2.7,6,6v4.9
+             C136.9-78,134.2-75.3,130.9-75.3z"/>
+             <path class="st01" d="M130.9-49.5H5.1c-3.3,0-6-2.7-6-6v-4.9c0-3.3,2.7-6,6-6h125.8c3.3,0,6,2.7,6,6v4.9
+             C136.9-52.1,134.2-49.5,130.9-49.5z"/>
+             </g>
+             <g>
+             <g>
+             <path class="st11" d="M137,1.6H5.9c-2,0-3.5,1.6-3.5,3.5v87c0,2,1.6,3.5,3.5,3.5h131c2,0,3.5-1.6,3.5-3.5v-87
+             C140.5,3.2,138.9,1.6,137,1.6z"/>
+             </g>
+             </g>
+             <path class="st01" d="M33.6,54.4h48.8L61.3,75.6h19.9l28.2-28.2L81.1,19.2H61.3l21.1,21.1H33.6V54.4z"/>
+             </svg>
+         </a>
+  </div>  <!-- closes taxi -->
+
   </div>
-  </div>
+
+</div>
 <!-- <div class="rate-content">
   <div ng-repeat></div>
 </div> -->

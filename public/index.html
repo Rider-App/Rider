@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="assets/stylesheets/ridesharing.css">
         <link rel="stylesheet" href="assets/stylesheets/rates.css">
         <link rel="stylesheet" href="assets/stylesheets/learn-more.css">
+        <link rel="stylesheet" href="assets/stylesheets/sign-up.css">
+        <link rel="stylesheet" href="assets/stylesheets/taxi.css">
+        <link rel="stylesheet" href="assets/stylesheets/public-transit.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_YQNuR9L13DHKMtg2kDULW4Rlg4wpsTc&libraries=places"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
@@ -18,8 +22,8 @@
 
     </head>
       <!-- define angular controller -->
-    <body>
-      <header>
+    <body ng-controller="farefairyController">
+      <header ng-controller="userController">
         <div class="header-container">
           <div class="header-left">login</div>
             <a href ="#/"><div class="rider-logo">
@@ -75,12 +79,10 @@
           <ul class = "ham-nav">
             <li><a class = "ham-link" href = "#/LearnMore">Learn More</a></li>
             <li><a class = "ham-link" href = "#/">New Request</a></li>
-            <li>Social Media</li>
+            <li><a class = "ham-link" href = "#/SignUp">Sign Up</a></li>
           </ul>
         </aside>
       </header>
-      <!-- <a href="#/Rates">Rates</a> -->
         <ng-view></ng-view>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     </body>
 </html>
