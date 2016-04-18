@@ -1,0 +1,20 @@
+<div ng-controller = "rideSharingController">
+  <header class = "public-transit-header">
+    <div class = "bus-icon"> <i class="fa fa-bus fa-5x" aria-hidden="true"></i></div>
+    <h1 class = "public-transit-title">{{publicTransit[0].travel_type}}</h1>
+  </header>
+
+  <!-- <div ng-controller="mapController" id="map"></div> -->
+
+  <main class = "public-transit-main">
+    <h2 class = "public-transit-options">{{publicTransit[0].travel_type}} Options</h2>
+    <ul ng-repeat = "transport in publicTransport" class = "public-transit-options"><ul>
+      <li class = "bus-name">{{transport.ride_name}}</li>
+      <li class = "bus-name">{{transport.short_name}}</li>
+      <li class = "bus-eta">Total ETA: {{transport.total_eta}}</li>
+    </ul>
+  </main>
+
+
+  <a ng-href= {{publicTransit[0].start_journey_url}} class = "google-link"><div class = "transit-get-directions">Get Directions</div></a>
+</div>
