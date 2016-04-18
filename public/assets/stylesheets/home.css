@@ -80,7 +80,10 @@ input::-webkit-input-placeholder {
     display: inline-block; }
 
 .home-go-link {
-  text-decoration: none; }
+  text-decoration: none;
+  float:right;
+  border:solid red thin;
+  }
 
 .home-ridesharing-go {
   display: inline-block;
