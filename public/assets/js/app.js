@@ -27,6 +27,9 @@ riderApp.config(function($routeProvider) {
             .when('/PublicTransit', {
                 templateUrl : 'public-transit.html',
             })
+            .when('/Favorites', {
+                templateUrl : 'favorites.html',
+            })
           }); //closes riderApp routeProvider
 
 

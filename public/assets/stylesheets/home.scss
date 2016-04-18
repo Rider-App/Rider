@@ -127,7 +127,7 @@ input::-webkit-input-placeholder {
   width: 80%;
   height: 300px;
   background-color: gray;
-  position: absolute;
+  position: fixed;
 
   input {
     font-size: 1.5em;
@@ -144,6 +144,10 @@ input::-webkit-input-placeholder {
     @extend .home-learn-more;
     margin-top: 10%;
   }
+
+  // .login-btn{
+  //
+  // }
 
   .login-modal-x{
     margin-left: 90%;

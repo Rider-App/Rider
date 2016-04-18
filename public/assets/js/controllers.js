@@ -1,6 +1,7 @@
 //doesn't work unless it's in a controller
 //----GLOBAL-VARIABLES----
 var rideType;
+var favType;
 
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
@@ -17,8 +18,10 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
  function init() {
    var inputStart = document.getElementById('searchTextField');
    var inputDest = document.getElementById('searchTextFieldTwo');
+   var inputFav = document.getElementById('searchTextFieldFav');
    var autocomplete = new google.maps.places.Autocomplete(inputStart);
    var autocompleteTwo = new google.maps.places.Autocomplete(inputDest);
+   var autocompleteFav = new google.maps.places.Autocomplete(inputFav);
  }
 
  google.maps.event.addDomListener(window, 'load', init());
@@ -39,6 +42,8 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 
    });
 
+   //add stop propogation to the modal
+
 }]);//-END-MAIN-CONTROLLER----------------------
 
 riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$timeout', 'mainInfo', function($http, $scope, $location, $timeout, mainInfo){
@@ -53,8 +58,6 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$t
     $scope.print = function apiCall(){
       var originAddress = $("#searchTextField").val();
       var destinationAddress = $("#searchTextFieldTwo").val();
-      // var originAddress = "904 Lambeth Circle, Durham, NC, United States";
-      // var destinationAddress = "800 Blackwell Street, Durham, NC, United States";
       var fairyInfo;
       mainInfo.setOrigin(originAddress);
       mainInfo.setDestination(destinationAddress);
@@ -114,7 +117,7 @@ riderApp.controller('ratesController', ['$http', '$scope', function($http, $scop
 
 //--SIGNUP-------------------------------------
 
-riderApp.controller('userController', ['$http', '$scope', function($http, $scope){
+riderApp.controller('userController', ['$http', '$scope', '$location', function($http, $scope, $location){
 
   $scope.formData = {
     "email" : "",
@@ -139,27 +142,54 @@ riderApp.controller('userController', ['$http', '$scope', function($http, $scope
   $scope.signIn = function(loginData){
 
   $http.post('https://farefairy.herokuapp.com/api/v1/login?email=' + $('#login-email-input').val()  + '&password=' + $('#login-pwd-input').val()).success(function(data){
-    console.log(data.user_id, data.user_id);
+    console.log(data.token, data.user_id);
     localStorage.setItem('token_login', data.token);
     localStorage.setItem('user_id_login', data.user_id);
 
-    $('.header-left').html("log out");
+    $('.login-submit-btn').on('click', function () {
+      $('.login-modal-cont.show').removeClass('show');
+    });
 
   }) //closes signIn http post
 
   } //closes signIn function
 
-  if ($('.header-left').html() === "log out"){
-    $('.header-left').click(function(){
-      // localStorage.getItem('token_login', data.token);
+  var favoritePlace = localStorage.getItem('token');
 
-      // $http.delete('https://farefairy.herokuapp.com/api/v1/logout?token=' + data.token)
-      // console.log(data.token);
-    })
-  } else {
+  $scope.clickedFavorite = function(index){
+    favType = index;
   }
 
-// var user = JSON.parse(localStorage.getItem('user'));
+  $scope.favorites = function(){
+    console.log(favoritePlace);
+
+
+    $http.post('https://farefairy.herokuapp.com/api/v1/favorites?favorite[name]=' + $('#favorite-name-input').val() + '&favorite[address]=' + $('#searchTextFieldFav').val() + '&token=' + favoritePlace).success(function(data){
+      console.log
+    });
+
+  } //closes scope.favorites function
+
+    $http.get('https://farefairy.herokuapp.com/api/v1/favorites?token=' + favoritePlace).success(function(data){
+      $scope.favData = data;
+      $scope.favNames = $scope.favData.favorites;
+      $scope.addFav = $scope.favData.favorites[favType].address;
+      console.log($scope.addFav)
+
+
+    }); //closes get for favData
+
+    $scope.favoriteFunction = function(){
+      $("#selectedFavorite").on('click', function(){
+        console.log("haha jones");
+        $("#searchTextField").val("haha jones");
+      })
+
+      $scope.go = function ( path ) {
+        $location.path( path );
+      };//Routing on green arrow from favorites to home
+    }
+
 
 
 }]); //closes userController

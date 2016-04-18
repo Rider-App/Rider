@@ -1,0 +1,26 @@
+.all-favorites {
+  margin-top: 5%; }
+
+.favorites-header {
+  margin-top: 10px;
+  text-align: center; }
+
+.fav-list {
+  vertical-align: top;
+  width: 30%;
+  display: inline-block; }
+
+.favorites-btn-container {
+  margin-top: 5%;
+  margin-left: 35%;
+  width: 100px;
+  height: 30px; }
+
+.favorite-pg-container {
+  margin-left: 8px; }
+
+.favorites-label {
+  font-size: 2em;
+  margin-left: 8%; }
+
+/*# sourceMappingURL=favorites.css.map */

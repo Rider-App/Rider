@@ -49,7 +49,7 @@ input::-webkit-input-placeholder {
 .home-learn-link {
   text-decoration: none; }
 
-.home-learn-more {
+.home-learn-more, .login-modal-cont .login-submit-btn {
   width: 60%;
   height: 40px;
   padding-top: 10px;
@@ -101,7 +101,7 @@ input::-webkit-input-placeholder {
   width: 80%;
   height: 300px;
   background-color: gray;
-  position: absolute; }
+  position: fixed; }
   .login-modal-cont input {
     font-size: 1.5em;
     margin-left: 8%;
@@ -111,28 +111,12 @@ input::-webkit-input-placeholder {
     border: 2px solid gray;
     border-radius: 5px;
     margin-top: 10px; }
-  .login-modal-cont .login-btn {
-    width: 60%;
-    height: 40px;
-    background-color: white;
-    color: #23c254;
-    font-size: 2em;
-    text-align: center;
-    margin-top: 10%;
-    margin-left: 20%;
-    margin-right: 15%;
-    border-radius: 5px;
-    border: none; }
+  .login-modal-cont .login-submit-btn {
+    margin-top: 10%; }
   .login-modal-cont .login-modal-x {
     margin-left: 90%; }
 
 .login-modal-cont.show {
   display: block; }
-
-.home-go-link {
-  background: transparent;
-  border: none;
-  width: 100px;
-  border: 100px; }
 
 /*# sourceMappingURL=home.css.map */
