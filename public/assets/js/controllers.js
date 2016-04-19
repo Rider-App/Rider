@@ -12,6 +12,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
    $("#searchTextField").val(position.coords.latitude + " , " + position.coords.longitude);
    console.log(position.coords.latitude, position.coords.longitude);
  });
+
 }; //closes geoLocation
 
 //-GOOGLE-MAPS-AUTOCOMPLETE-------------------

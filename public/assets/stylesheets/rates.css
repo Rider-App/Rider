@@ -3,7 +3,8 @@
   height: 25em; }
 
 .categories {
-  background-color: #C7DAE3;
+  color: white;
+  background-color: #484849;
   border-top: solid grey thin;
   border-bottom: solid grey thin;
   font-size: .95em;
@@ -11,13 +12,11 @@
 
 .mode {
   display: inline-block;
-  border-right: solid grey thin;
   width: 25%;
   padding: .5em 0 .5em .5em; }
 
 .price {
   display: inline-block;
-  border-right: solid grey thin;
   width: 30%;
   padding: .5em 0 .5em .25em; }
 
@@ -32,9 +31,10 @@
 .rates-item {
   font-weight: 600;
   color: #505050;
-  border: none red thin;
-  border-bottom: solid grey thin;
-  padding-right: .6em; }
+  border: none red thin; }
+
+.rates-item:nth-of-type(2n+1) {
+  background-color: #e7e7e8; }
 
 .travel-type {
   font-size: 1.2em;
@@ -73,8 +73,9 @@
 .rates-arrow {
   border: none red thin;
   float: right;
-  width: 45px;
-  margin-top: .3em; }
+  width: 50px;
+  margin-top: .1em;
+  margin-right: 0; }
   .rates-arrow svg {
     border: none red thin; }
 
