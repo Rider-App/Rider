@@ -147,6 +147,12 @@ riderApp.controller('ratesController', ['$http', '$scope', function($http, $scop
 
 riderApp.controller('userController', ['$http', '$scope', '$location', function($http, $scope, $location){
 
+  $scope.loggedIn = false;
+
+  if (localStorage.getItem("token_login")) {
+            $scope.loggedIn = true;
+  };
+
   $scope.formData = {
     "email" : "",
     "password" : ""

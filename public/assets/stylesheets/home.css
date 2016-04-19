@@ -3,6 +3,10 @@ html {
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 12pt; }
 
+header {
+  box-shadow: 0px 5px 10px #888888;
+  border: solid red thin; }
+
 .home-map-container {
   border: .1px solid white;
   background-image: url(/assets/images/static-map.png);
@@ -50,7 +54,7 @@ input::-webkit-input-placeholder {
 .home-learn-link {
   text-decoration: none; }
 
-.home-learn-more, .login-modal-cont .login-submit-btn {
+.home-learn-more {
   width: 60%;
   height: 40px;
   padding-top: 10px;
@@ -93,12 +97,13 @@ input::-webkit-input-placeholder {
   padding-right: 40%; }
 
 .login-modal-cont {
+  margin-top: 0;
   display: none;
-  margin-left: 8%;
-  width: 80%;
+  margin-left: 20%;
+  width: 60%;
   height: 300px;
   background-color: gray;
-  position: absolute; }
+  position: fixed; }
   .login-modal-cont input {
     font-size: 1.5em;
     margin-left: 8%;
@@ -109,9 +114,24 @@ input::-webkit-input-placeholder {
     border-radius: 5px;
     margin-top: 10px; }
   .login-modal-cont .login-submit-btn {
-    margin-top: 10%; }
+    margin-left: 10%;
+    margin-top: 10px;
+    width: 80%;
+    height: 70px;
+    background-color: #57b74d;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 10%;
+    border: none; }
   .login-modal-cont .login-modal-x {
-    margin-left: 90%; }
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    width: 40px;
+    background-color: #57b74d;
+    margin-top: 5px;
+    margin-left: 85%; }
 
 .login-modal-cont.show {
   display: block; }
