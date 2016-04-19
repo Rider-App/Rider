@@ -37,7 +37,7 @@ https://github.com/Rider-App/fare_fairy
 
 ## Keep in Touch
 
-twitter.com/rider_app
+https://www.twitter.com/rider_app
 
 
 
