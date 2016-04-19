@@ -106,31 +106,6 @@ riderApp.factory('mainInfo', function($http){
           directionsDisplay.setDirections(response);
         }
       });
-
-      //-----map for publictransit page---------------
-      // var map = new google.maps.Map(document.getElementById('map-pt'), {
-      //   center: originCoord,
-      //   zoom: 8
-      // });
-      // var directionsDisplay = new google.maps.DirectionsRenderer({
-      //  map: map-pt
-      // });
-      // // Set destination, origin and travel mode.
-      //  var request = {
-      //    destination: destinationCoord,
-      //    origin: originCoord,
-      //    travelMode: google.maps.TravelMode.DRIVING
-      //  };
-      //  // console.log("even further, this time")
-      //  // Pass the directions request to the directions service.
-      //  var directionsService = new google.maps.DirectionsService();
-      //  directionsService.route(request, function(response, status) {
-      //    if (status == google.maps.DirectionsStatus.OK) {
-      //      // Display the route on the map.
-      //      directionsDisplay.setDirections(response);
-      //    }
-      //  });
-       //--------end map for publictransit page-----------
    }
 
   return factory;
@@ -146,3 +121,21 @@ var isMobile= {
      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
    }
  };
+
+riderApp.directive('loading', ['$http', function ($http) {
+    return {
+        restrict: 'A',
+        link: function (scope, elm, attrs) {
+            scope.isLoading = function () {
+                return $http.pendingRequests.length > 0;
+            };
+            scope.$watch(scope.isLoading, function (v) {
+                if (v) {
+                    elm.show();
+                } else {
+                    elm.hide();
+                }
+            });
+        }
+    };
+  }]);

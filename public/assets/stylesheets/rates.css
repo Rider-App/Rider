@@ -74,9 +74,20 @@
   border: none red thin;
   float: right;
   width: 50px;
+  height: 100%;
   margin-top: .1em;
   margin-right: 0; }
   .rates-arrow svg {
     border: none red thin; }
+
+.loading-dialog {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent url("../images/loading.gif") 50% 50% no-repeat; }
 
 /*# sourceMappingURL=rates.css.map */
