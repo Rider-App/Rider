@@ -81,7 +81,6 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$t
 $rootScope.$on('$locationChangeSuccess', function() {
           // console.log("bajaPhones")
 setTimeout(function () {
-            console.log("jajaGroans")
             google.maps.event.addDomListener(window, 'load', mainInfo.initMap());//load map
         }, 0);
 });
