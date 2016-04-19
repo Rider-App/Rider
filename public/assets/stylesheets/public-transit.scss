@@ -16,13 +16,13 @@ html {
 }
 
 .bus-icon{
-  margin: 10px;
+  margin-left: 5%;
+  margin-top: 5px;
+  text-align: right;
+  width: 80px;
+  height: 80px;
+  color: black;
   display: inline-block;
-
-  .fa-bus{
-    color: black;
-  }
-
 }
 
 
@@ -30,7 +30,7 @@ html {
   font-size: 5em;
   font-weight: 500;
   display: inline-block;
-  width: 60%;
+  width: 70%;
 }
 
 .public-transit-main{
