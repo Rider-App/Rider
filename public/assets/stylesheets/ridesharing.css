@@ -50,12 +50,18 @@ html {
     margin-top: 5%; }
   .ridesharing-costs .ridesharing-cost-list.hide {
     display: none; }
-  .ridesharing-costs .ridesharing-type-title {
+  .ridesharing-costs .ridesharing-type-line {
     width: 100%;
+    border-bottom: 3px solid gray; }
+  .ridesharing-costs .ridesharing-type-title {
+    width: 90%;
     display: inline-block;
     font-size: 3em;
-    font-weight: 500;
-    border-bottom: 3px solid gray; }
+    font-weight: 500; }
+  .ridesharing-costs .fa-plus {
+    display: inline-block;
+    text-align: right;
+    color: #57b74d; }
   .ridesharing-costs .ridesharing-eta {
     padding-top: 5px;
     padding-bottom: 2px;

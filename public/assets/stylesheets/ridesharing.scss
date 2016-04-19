@@ -73,12 +73,22 @@ html {
       display: none;
     }
 
-    .ridesharing-type-title{
+    .ridesharing-type-line{
       width: 100%;
+      border-bottom: 3px solid rgb(128,128,128);
+    }
+
+    .ridesharing-type-title{
+      width: 90%;
       display: inline-block;
       font-size: 3em;
       font-weight: 500;
-      border-bottom: 3px solid rgb(128,128,128);
+    }
+
+    .fa-plus{
+      display: inline-block;
+      text-align: right;
+      color: #57b74d;
     }
 
     .ridesharing-eta {

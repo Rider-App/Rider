@@ -11,13 +11,15 @@ html {
 }
 
 .public-transit-header{
+  padding-bottom: 3%;
   width: 100%;
   box-shadow: 0px 5px 20px rgba(0,0,0,.3);
 }
 
 .bus-icon{
   margin-left: 5%;
-  margin-top: 5px;
+  margin-bottom: 0;
+  margin-top: 3%;
   text-align: right;
   width: 80px;
   height: 80px;
@@ -27,7 +29,8 @@ html {
 
 
 .public-transit-title{
-  font-size: 5em;
+  margin-bottom: 3%;
+  font-size: 4.5em;
   font-weight: 500;
   display: inline-block;
   width: 70%;

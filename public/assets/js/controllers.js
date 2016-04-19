@@ -29,8 +29,9 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
  // $scope.$apply();
 
  //--LOGIN-MODAL-FUNCTIONS---------------------
-   $('.header-right').on('click', function () {
+   $('.header-right, .ham-link').on('click', function () {
      $('.hamburger-menu').toggleClass('show');
+
    });
 
    $('.header-left').on('click', function () {
