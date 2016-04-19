@@ -21,7 +21,7 @@ The Front-End team created Rider with as an AngularJS single place app, utlizing
 * Alex Allis - Designer, Front-End Developer
 * Nicky Cadavillo - Team-Lead, Front-End Developer
 * Jefferson Neel - Team-Lead, Rails Developer
-* James Publicover - Rails Developer
+* Jim Publicover - Rails Developer
 * Kevin Scott - Rails Developer
 * Kate Studwell - Rails Developer
 
