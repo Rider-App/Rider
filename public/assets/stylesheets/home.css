@@ -5,7 +5,7 @@ html {
 
 header {
   box-shadow: 0px 5px 10px #888888;
-  border: none red thin; }
+  border: none; }
 
 .home-map-container {
   border: .1px solid white;

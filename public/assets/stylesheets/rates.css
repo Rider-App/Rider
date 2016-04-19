@@ -1,15 +1,14 @@
 #map {
   width: 100%;
-  height: 25em;
- }
+  height: 25em; }
+
 .categories {
   color: white;
   background-color: #484849;
   border-top: solid grey thin;
   border-bottom: solid grey thin;
   font-size: .95em;
-  font-weight: 600;
- }
+  font-weight: 600; }
 
 .mode {
   display: inline-block;
@@ -72,14 +71,11 @@
   padding-left: .2em; }
 
 .rates-arrow {
-  border: none red thin;
   float: right;
   width: 50px;
   height: 100%;
   margin-top: .1em;
   margin-right: 0; }
-  .rates-arrow svg {
-    border: none red thin; }
 
 .loading-dialog {
   display: none;
