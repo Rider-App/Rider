@@ -42,10 +42,6 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 
    });
 
-   $('.ham-link').on('click', function () {
-     $('.hamburger-menu').toggleClass('show');
-   });
-
    $('.header-left').on('click', function () {
      $('.login-modal-cont').toggleClass('show');
 
@@ -201,7 +197,7 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
 
   } //closes signIn function
 
-  var favoritePlace = localStorage.getItem('token');
+  var favoritePlace = localStorage.getItem('token_login');
 
   $scope.clickedFavorite = function(index){
     favType = index;
