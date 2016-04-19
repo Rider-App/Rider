@@ -1,0 +1,60 @@
+.taxi-header {
+  width: 100%;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); }
+
+.taxi-icon {
+  margin: 10px;
+  display: inline-block; }
+  .taxi-icon .fa-taxi {
+    color: #ffb000; }
+
+.taxi-title {
+  font-size: 6em;
+  font-weight: 500;
+  display: inline-block;
+  width: 60%; }
+
+.taxi-container {
+  width: 100%;
+  margin-top: 5%;
+  margin-right: 0;
+  margin-bottom: 5%; }
+  .taxi-container .local-taxi-title {
+    margin-left: 8px;
+    font-size: 2em;
+    margin-bottom: 5px; }
+  .taxi-container .local-taxis {
+    width: 100%; }
+  .taxi-container .taxi-name-container {
+    width: 70%;
+    display: inline-block;
+    font-size: 1.2em;
+    margin-top: 5px;
+    margin-left: 8px; }
+    .taxi-container .taxi-name-container .taxi-name {
+      display: inline-block;
+      width: 50%;
+      padding-bottom: 10px;
+      border-bottom: 3px solid gray; }
+    .taxi-container .taxi-name-container .taxi-number {
+      text-align: right;
+      display: inline-block;
+      width: 49%;
+      padding-bottom: 10px;
+      border-bottom: 3px solid gray; }
+  .taxi-container .taxi-button-cont {
+    display: inline-block;
+    width: 20%; }
+  .taxi-container .taxi-button {
+    font-size: 1.2em;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 1.5em;
+    color: white;
+    background-color: #57b74d; }
+  .taxi-container a {
+    text-decoration: none; }
+
+/*# sourceMappingURL=taxi.css.map */

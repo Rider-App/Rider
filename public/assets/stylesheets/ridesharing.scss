@@ -2,6 +2,12 @@ $font: 'Helvetica Neue', Helvetica, sans-serif;
 
 html {
   font-family: $font;
+  background-color: rgb(242,242,242);
+
+}
+
+.ridesharing-cont{
+  background-color: rgb(242,242,242);
 }
 
 .ridesharing-header{
@@ -31,9 +37,12 @@ html {
   display: inline-block;
 }
 
+
 .ridesharing-costs {
+  background-color: rgb(242,242,242);
+  margin-left: 8%;
   margin-top: 5%;
-  width: 100%;
+  width: 85%;
 
     .ridesharing-special {
       font-weight: 600;
@@ -42,11 +51,13 @@ html {
       display: inline-block;
 
       .fa-exclamation-circle {
+        display: inline-block;
         margin-left: 10px;
         margin-right: 3px;
       }
 
       .fa-info-circle{
+        display: inline-block;
         vertical-align: top;
         font-size: .9em;
         margin-left: 2px;
@@ -54,20 +65,35 @@ html {
       }
     }
 
-    .ridesharing-cost-title{
+    .ridesharing-cost-list {
+      margin-top: 5%;
+    }
+
+    .ridesharing-cost-list.hide{
+      display: none;
+    }
+
+    .ridesharing-type-line{
+      width: 100%;
+      border-bottom: 3px solid rgb(128,128,128);
+    }
+
+    .ridesharing-type-title{
+      width: 90%;
       display: inline-block;
       font-size: 3em;
       font-weight: 500;
     }
 
-    .ridesharing-car-3 {
-      border: none;
+    .fa-plus{
+      display: inline-block;
+      text-align: right;
+      color: #57b74d;
     }
 
-    li {
+    .ridesharing-eta {
       padding-top: 5px;
       padding-bottom: 2px;
-      border-bottom: 3px solid rgb(128,128,128);
       font-size: 1.5em;
 
       h3 {
@@ -80,12 +106,6 @@ html {
         display: inline-block;
         width: 49%;
         text-align: right;
-
-        small {
-          font-size: .6em;
-          vertical-align: top;
-        }
-
       }
 
       h2 {
@@ -93,53 +113,37 @@ html {
         width: 49%;
         display: inline-block;
       }
+    } //closes ridesharing-eta
+
+    .ridesharing-eta.line{
+      font-size: 1em;
+      // border-bottom: 3px solid rgb(128,128,128);
     }
 
-}
-
-.ridesharing-eta {
-  margin-top: 5%;
-  width: 100%;
-
-  .ridesharing-eta-title{
-    // @extend .ridesharing-cost-title;
-    font-size: 3em;
-    font-weight: 500;
-  }
-
-  .ridesharing-total-eta {
-    border: none;
-  }
-
-  li {
-    padding-top: 5px;
-    padding-bottom: 2px;
-    border-bottom: 3px solid rgb(128,128,128);
-    font-size: 1.5em;
-
-    h3 {
-      display: inline-block;
-      width: 49%;
-    }
-
-    p {
-      font-weight: 600;
-      display: inline-block;
-      width: 49%;
-      text-align: right;
-    }
-
-    h2 {
+    .ridesharing-cost {
       font-size: 1.5em;
-      width: 49%;
-      display: inline-block;
+      @extend.ridesharing-eta.line;
+
+      h3 {
+        display: inline-block;
+        width: 49%;
+      }
+
+      p{
+        font-weight: 600;
+        display: inline-block;
+        width: 49%;
+        text-align: right;
+      }
+
+      small {
+        font-size: .6em;
+        vertical-align: top;
+      }
 
     }
-    .ridesharing-total-min {
-      font-size: 1.5em;
-    }
-  }
-}
+} //closes ridesharing-costs
+
 
 .ridesharing-go{
   margin-top: 5%;

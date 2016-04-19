@@ -4,7 +4,8 @@
 }
 
 .categories{
-  background-color: #C7DAE3;
+  color: white;
+  background-color: rgb(72,72,73);
   border-top:solid grey thin;
   border-bottom:solid grey thin;
   font-size:.95em;
@@ -13,14 +14,12 @@
 
 .mode{
   display: inline-block;
-  border-right:solid grey thin;
   width:25%;
   padding:.5em 0 .5em .5em;
 }
 
 .price{
   display: inline-block;
-  border-right:solid grey thin;
   width:30%;
   padding:.5em 0 .5em .25em;
 }
@@ -39,8 +38,12 @@
   font-weight: 600;
   color:rgb(80,80,80);
   border:none red thin;
-  border-bottom:solid grey thin;
-  padding-right:.6em;
+  // border-bottom:solid grey thin;
+  // padding-right:.6em;
+}
+
+.rates-item:nth-of-type(2n+1){
+  background-color: rgb(231,231,232);
 }
 
 .travel-type{
@@ -88,10 +91,23 @@
     border:none red thin;
     float:right;
     // width: 15%;
-    width:45px;
-    margin-top:.3em;
+    width:50px;
+    height: 100%;
+    margin-top:.1em;
+    margin-right: 0;
     svg{
       // display:inline-block;
       border:none red thin;
     }
 }
+
+.loading-dialog {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 0, 0, 0, 0 ) url('../images/loading.gif') 50% 50% no-repeat;
+  }
