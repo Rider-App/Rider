@@ -45,9 +45,11 @@ html {
   .ridesharing-costs .ridesharing-cost-list.hide {
     display: none; }
   .ridesharing-costs .ridesharing-type-title {
+    width: 80%;
     display: inline-block;
     font-size: 3em;
-    font-weight: 500; }
+    font-weight: 500;
+    border-bottom: 3px solid gray; }
   .ridesharing-costs .ridesharing-eta {
     padding-top: 5px;
     padding-bottom: 2px;
@@ -65,10 +67,8 @@ html {
       width: 49%;
       display: inline-block; }
   .ridesharing-costs .ridesharing-eta.line, .ridesharing-costs .ridesharing-cost {
-    font-size: 1em;
-    border-bottom: 3px solid gray; }
+    font-size: 1em; }
   .ridesharing-costs .ridesharing-cost {
-    border-bottom: 3px solid gray;
     font-size: 1.5em; }
     .ridesharing-costs .ridesharing-cost h3 {
       display: inline-block;

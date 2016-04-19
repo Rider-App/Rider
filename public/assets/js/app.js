@@ -83,7 +83,7 @@ riderApp.factory('mainInfo', function($http){
        mapTypeId: google.maps.MapTypeId.ROADMAP
      };
     //  var styles = [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#007fff"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#0091ff"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#ff5e00"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]}]
-     console.log("a little further, this time")
+    //  console.log("a little further, this time")
      var map = new google.maps.Map(document.getElementById('map'), {
        center: originCoord,
        zoom: 8
@@ -97,7 +97,7 @@ riderApp.factory('mainInfo', function($http){
         origin: originCoord,
         travelMode: google.maps.TravelMode.DRIVING
       };
-      console.log("even further, this time")
+      // console.log("even further, this time")
       // Pass the directions request to the directions service.
       var directionsService = new google.maps.DirectionsService();
       directionsService.route(request, function(response, status) {
@@ -121,3 +121,21 @@ var isMobile= {
      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
    }
  };
+
+riderApp.directive('loading', ['$http', function ($http) {
+    return {
+        restrict: 'A',
+        link: function (scope, elm, attrs) {
+            scope.isLoading = function () {
+                return $http.pendingRequests.length > 0;
+            };
+            scope.$watch(scope.isLoading, function (v) {
+                if (v) {
+                    elm.show();
+                } else {
+                    elm.hide();
+                }
+            });
+        }
+    };
+  }]);

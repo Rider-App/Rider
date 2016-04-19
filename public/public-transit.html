@@ -4,14 +4,13 @@
     <h1 class = "public-transit-title">{{publicTransit[0].travel_type}}</h1>
   </header>
 
-  <!-- <div ng-controller="mapController" id="map"></div> -->
+  <div id="map-pt"></div>
 
   <main class = "public-transit-main">
-    <h2 class = "public-transit-options">{{publicTransit[0].travel_type}} Options</h2>
     <ul ng-repeat = "transport in publicTransport" class = "public-transit-options"><ul>
-      <li class = "bus-name">{{transport.ride_name}}</li>
-      <li class = "bus-name">{{transport.short_name}}</li>
-      <li class = "bus-eta">Total ETA: {{transport.total_eta}}</li>
+      <li id = "short-name" class = "bus-name">{{transport.short_name}}</li>
+      <li id = "long-name" class = "bus-name">{{transport.ride_name}}</li>
+      <li id ="bus-total-eta" class = "bus-eta"><h2 class = "left-eta">Total ETA</h2> <h2 class = "right-eta">{{transport.total_eta}}</h2></li>
     </ul>
   </main>
 
