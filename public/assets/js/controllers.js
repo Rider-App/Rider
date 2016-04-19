@@ -113,18 +113,19 @@ riderApp.controller('rideSharingController', ['$http', '$scope', 'mainInfo', fun
 
 riderApp.controller('transitController', ['$http', '$scope', 'mainInfo', 'transitMapFactory', function($http, $scope, mainInfo, transitMapFactory){
 
-     fairyInfo = mainInfo.getFarefairy();//define json object
+    fairyInfo = mainInfo.getFarefairy();//define json object
+
+    if (fairyInfo.data != undefined) {
      $scope.farefairy = fairyInfo.data;//define json object
      $scope.ridesharing = fairyInfo.data.ride_sharing;//more definitions
      $scope.publicTransit = $scope.farefairy.transit;
      $scope.taxi = $scope.farefairy.taxis[0];
      $scope.taxiType = $scope.taxi.travel_type;
-
-       $scope.publicTransport = $scope.publicTransit[0].details.transit;
-
-         google.maps.event.addDomListener(window, 'load', transitMapFactory.initMap());//load map
-
-
+     $scope.publicTransport = $scope.publicTransit[0].details.transit;
+     google.maps.event.addDomListener(window, 'load', transitMapFactory.initMap());//load map
+    }
+    else
+      window.location.href = '/';
 
 }]);//end transit controller
 
@@ -150,6 +151,12 @@ riderApp.controller('ratesController', ['$http', '$scope', function($http, $scop
 //--SIGNUP-------------------------------------
 
 riderApp.controller('userController', ['$http', '$scope', '$location', function($http, $scope, $location){
+
+  $scope.loggedIn = false;
+
+  if (localStorage.getItem("token_login")) {
+            $scope.loggedIn = true;
+  };
 
   $scope.formData = {
     "email" : "",

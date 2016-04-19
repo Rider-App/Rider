@@ -3,6 +3,10 @@ html {
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 12pt; }
 
+header {
+  box-shadow: 0px 5px 10px #888888;
+  border: solid red thin; }
+
 .home-map-container {
   border: .1px solid white;
   background-image: url(/assets/images/static-map.png);
@@ -23,6 +27,7 @@ html {
     font-size: 2em;
     display: inline-block; }
   .home-container .home-favorites {
+    color: #57b74d;
     margin-bottom: 3px;
     font-weight: 600;
     width: 30%;
@@ -50,7 +55,7 @@ input::-webkit-input-placeholder {
 .home-learn-link {
   text-decoration: none; }
 
-.home-learn-more, .login-modal-cont .login-submit-btn {
+.home-learn-more {
   width: 60%;
   height: 40px;
   padding-top: 10px;
@@ -65,9 +70,9 @@ input::-webkit-input-placeholder {
 
 .powered-by {
   width: 100%;
-  margin-left: 8%;
   margin-right: 0; }
   .powered-by p {
+    margin-left: 25%;
     margin-top: 10px;
     font-size: 1em;
     display: inline-block;
@@ -81,21 +86,20 @@ input::-webkit-input-placeholder {
     display: inline-block; }
 
 .home-go-link {
+  border: none;
   width: 100%;
-  text-decoration: none; }
-
-.home-ridesharing-go {
+  text-decoration: none;
+  color: white;
   background-color: #57b74d;
-  width: 60%;
-  height: 70px;
-  padding-top: 25px;
+  height: 80px;
   padding-left: 40%;
   padding-right: 40%; }
 
 .login-modal-cont {
+  margin-top: 0;
   display: none;
-  margin-left: 8%;
-  width: 80%;
+  margin-left: 15%;
+  width: 70%;
   height: 300px;
   background-color: gray;
   position: absolute; }
@@ -109,9 +113,25 @@ input::-webkit-input-placeholder {
     border-radius: 5px;
     margin-top: 10px; }
   .login-modal-cont .login-submit-btn {
-    margin-top: 10%; }
+    margin-left: 8%;
+    width: 80%;
+    height: 50px;
+    background-color: #57b74d;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: none; }
   .login-modal-cont .login-modal-x {
-    margin-left: 90%; }
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    width: 35px;
+    background-color: #57b74d;
+    margin-top: 5%;
+    margin-left: 80%;
+    border-radius: 3px; }
 
 .login-modal-cont.show {
   display: block; }
