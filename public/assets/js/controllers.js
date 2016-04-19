@@ -107,7 +107,7 @@ riderApp.controller('rideSharingController', ['$http', '$scope', 'mainInfo', fun
        $scope.deepLinking = $scope.farefairy.ride_sharing[rideType].start_journey_url;
 }]);//end ridesharing controller
 
-riderApp.controller('transitController', ['$http', '$scope', 'mainInfo', function($http, $scope, mainInfo){
+riderApp.controller('transitController', ['$http', '$scope', 'mainInfo', 'transitMapFactory', function($http, $scope, mainInfo, transitMapFactory){
 
      fairyInfo = mainInfo.getFarefairy();//define json object
      $scope.farefairy = fairyInfo.data;//define json object
@@ -117,6 +117,11 @@ riderApp.controller('transitController', ['$http', '$scope', 'mainInfo', functio
      $scope.taxiType = $scope.taxi.travel_type;
 
        $scope.publicTransport = $scope.publicTransit[0].details.transit;
+
+         google.maps.event.addDomListener(window, 'load', transitMapFactory.initMap());//load map
+
+
+
 }]);//end transit controller
 
 riderApp.controller('taxiController', ['$http', '$scope', 'mainInfo', function($http, $scope, mainInfo){
