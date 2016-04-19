@@ -16,7 +16,7 @@ Click on any of the options to find detailed information about each ride, includ
 
 The Front-End team created Rider with as an AngularJS single place app, utlizing HTML, CSS, JavaScript and jQuery.  
 
-For the Rails team, please see the Fare Fairy API below.
+**For the Rails team, please see the Fare Fairy API below.**
 
 ## Our Team
 
