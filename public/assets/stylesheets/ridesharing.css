@@ -1,5 +1,9 @@
 html {
-  font-family: "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f2f2f2; }
+
+.ridesharing-cont {
+  background-color: #f2f2f2; }
 
 .ridesharing-header {
   width: 100%;
@@ -23,8 +27,10 @@ html {
   display: inline-block; }
 
 .ridesharing-costs {
+  background-color: #f2f2f2;
+  margin-left: 8%;
   margin-top: 5%;
-  width: 100%; }
+  width: 85%; }
   .ridesharing-costs .ridesharing-special {
     font-weight: 600;
     width: 50%;
@@ -45,7 +51,7 @@ html {
   .ridesharing-costs .ridesharing-cost-list.hide {
     display: none; }
   .ridesharing-costs .ridesharing-type-title {
-    width: 80%;
+    width: 100%;
     display: inline-block;
     font-size: 3em;
     font-weight: 500;

@@ -2,6 +2,12 @@ $font: 'Helvetica Neue', Helvetica, sans-serif;
 
 html {
   font-family: $font;
+  background-color: rgb(242,242,242);
+
+}
+
+.ridesharing-cont{
+  background-color: rgb(242,242,242);
 }
 
 .ridesharing-header{
@@ -33,8 +39,10 @@ html {
 
 
 .ridesharing-costs {
+  background-color: rgb(242,242,242);
+  margin-left: 8%;
   margin-top: 5%;
-  width: 100%;
+  width: 85%;
 
     .ridesharing-special {
       font-weight: 600;
@@ -66,7 +74,7 @@ html {
     }
 
     .ridesharing-type-title{
-      width: 80%;
+      width: 100%;
       display: inline-block;
       font-size: 3em;
       font-weight: 500;
