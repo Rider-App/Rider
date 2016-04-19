@@ -27,7 +27,8 @@
     <body ng-controller="farefairyController">
       <header ng-controller="userController">
         <div class="header-container">
-          <div class="header-left">login</div>
+          <div class="header-left" ng-hide="{{loggedIn}}">login</div>
+          <div class="header-left" ng-hide="{{!loggedIn}}">logout</div>
             <a href ="#/"><div class="rider-logo">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 206 59" style="enable-background:new 0 0 206 59;" xml:space="preserve">
