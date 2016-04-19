@@ -6,10 +6,18 @@ var favType;
 riderApp.controller('mainController', [ '$http', '$scope', function($http, $scope){
 
   // geolocation API
- $scope.geoLocation = function(){
+ $scope.geoLocationStart = function(){
 
  navigator.geolocation.getCurrentPosition(function(position) {
    $("#searchTextField").val(position.coords.latitude + " , " + position.coords.longitude);
+   console.log(position.coords.latitude, position.coords.longitude);
+ });
+};
+
+ $scope.geoLocationEnd = function(){
+
+ navigator.geolocation.getCurrentPosition(function(position) {
+   $("#searchTextFieldTwo").val(position.coords.latitude + " , " + position.coords.longitude);
    console.log(position.coords.latitude, position.coords.longitude);
  });
 

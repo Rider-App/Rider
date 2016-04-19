@@ -11,16 +11,18 @@
             <button type = "submit" class = "login-submit-btn">send</button>
         </form> <!-- closes modal-container -->
 
-  <label class = "home-search-label">Start</label>
-  <a href = "#/Favorites"> <aside ng-hide="{{!loggedIn}}" class = "home-favorites">favorites</aside></a>  <i ng-click = "geoLocation()" class="fa fa-map-marker fa-2x"></i>
-  <input id="searchTextField" class = "home-searchbox" type="text" placeholder = "">
-  <label class = "home-search-label">Destination</label>
-  <a href = "#/Favorites"> <aside ng-hide="{{!loggedIn}}" class = "home-favorites">favorites</aside></a>  <i  ng-click = "geoLocation()" class="fa fa-map-marker fa-2x"></i>
-  <input id="searchTextFieldTwo" ng-model="input2" class = "home-searchbox" type="text" placeholder = "">
+  <form name="searchFields">
+    <label class = "home-search-label">Start</label>
+    <a href = "#/Favorites"> <aside ng-hide="{{!loggedIn}}" class = "home-favorites">favorites</aside></a>  <i ng-click = "geoLocationStart()" class="fa fa-map-marker fa-2x"></i>
+    <input id="searchTextField" class = "home-searchbox" type="text" placeholder = "" required>
+    <label class = "home-search-label">Destination</label>
+    <a href = "#/Favorites"> <aside ng-hide="{{!loggedIn}}" class = "home-favorites">favorites</aside></a>  <i  ng-click = "geoLocationEnd()" class="fa fa-map-marker fa-2x"></i>
+    <input id="searchTextFieldTwo" ng-model="input2" class = "home-searchbox" type="text" placeholder = "" required>
 
-  <div class = "powered-by"><p>Powered by</p><img class = "farefairy" src = "/assets/images/FareFairyLogo-01.jpg"></img></div>
-  <button type="submit" class = "home-go-link" ng-click="go('/Rates'); print(input1, input2)">
-    <!-- <div class = "home-ridesharing-go"> -->
+    <div class = "powered-by"><p>Powered by</p><img class = "farefairy" src = "/assets/images/FareFairyLogo-01.jpg"></img></div>
+    <button type="submit" class = "home-go-link" ng-click="go('/Rates'); print(input1, input2)" ng-disabled="searchFields.$invalid">
+      <!-- <div class = "home-ridesharing-go"> -->
+
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
        viewBox="0 0 134.1 59" style="enable-background:new 0 0 134.1 59;" xml:space="preserve">
       <style type="text/css">
@@ -67,6 +69,7 @@
       </svg>
     <!-- </div> -->
   </button>
+  </form>
 <!-- </form> -->
 
 
