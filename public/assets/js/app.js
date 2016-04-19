@@ -1,7 +1,7 @@
 var riderApp = angular.module('riderApp', ['ngRoute']);
 
 riderApp.config( ['$compileProvider', function( $compileProvider ){
-  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|chrome-extension|mailto|uber|lyft):/);
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|chrome-extension|mailto|uber|lyft|tel):/);
 }]);
 
 riderApp.config(function($routeProvider) {
