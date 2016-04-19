@@ -23,3 +23,8 @@ Click on any of the options to find detailed information about each ride, includ
 
 twitter.com/rider_app
 
+## The Fare Fairy API
+
+https://farefairy.herokuapp.com/
+https://github.com/Rider-App/fare_fairy
+
