@@ -10,7 +10,16 @@ html {
   border: none;
   text-align: center;
   overflow: hidden; }
-  .header-container .header-left {
+  .header-container .header-left-login {
+    background-color: #57b74d;
+    float: left;
+    color: white;
+    width: 25%;
+    text-align: center;
+    padding: .7em 0 1em 0;
+    font-size: 1.4em;
+    border: none; }
+  .header-container .header-left-logout {
     background-color: #57b74d;
     float: left;
     color: white;
