@@ -15,7 +15,7 @@ Rider displays the rates and ETAs of Uber, Lyft, local taxis and public transit 
 Click on any of the options to find detailed information about each ride, including surge pricing, car types, taxi phone numbers, or directions to your public transit of choice.
 
 
-The Front-End team created Rider with as an AngularJS single place app, utlizing HTML, CSS, JavaScript and jQuery.  
+The Front-End team created Rider as an AngularJS single place app, utlizing HTML, CSS, JavaScript and jQuery.  We included Google Maps and Google Maps Places Autocomplete to add familiar functionality and ease of use.  Our design was inspired by wayfinding signage and typography, commonly found in airports and highway signs.  This paves a clear direction for users within Rider and is globally recognizable.
 
 **For the Rails team, please see the Fare Fairy API below.**
 
