@@ -42,11 +42,7 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
 
    });
 
-   $('.ham-link').on('click', function () {
-     $('.hamburger-menu').toggleClass('show');
-   });
-
-   $('.header-left').on('click', function () {
+   $('.header-left-login').on('click', function () {
      $('.login-modal-cont').toggleClass('show');
 
    });
@@ -192,16 +188,22 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
     console.log(data.token, data.user_id);
     localStorage.setItem('token_login', data.token);
     localStorage.setItem('user_id_login', data.user_id);
-
-    $('.login-submit-btn').on('click', function () {
-      $('.login-modal-cont.show').removeClass('show');
-    });
-
+    window.location.href = '/';
   }) //closes signIn http post
 
   } //closes signIn function
 
-  var favoritePlace = localStorage.getItem('token');
+  $scope.signOut = function(loginData){
+    var token = localStorage.getItem('token_login')
+
+    $http.delete('https://farefairy.herokuapp.com/api/v1/logout?token=' + token).success(function(data){
+      localStorage.clear();
+      window.location.href = '/';
+    }) //closes signOut http post
+
+} //closes signOut function
+
+  var favoritePlace = localStorage.getItem('token_login');
 
   $scope.clickedFavorite = function(index){
     favType = index;
