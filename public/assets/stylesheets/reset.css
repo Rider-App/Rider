@@ -12,6 +12,8 @@ dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
 	margin: 0;
 	border: 0;
 	}
+
+
 /* remember to define focus styles! */
 :focus {
 	outline: 0;
@@ -40,3 +42,4 @@ blockquote:before, blockquote:after, q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 	}
+	
