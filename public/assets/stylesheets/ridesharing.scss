@@ -2,6 +2,12 @@ $font: 'Helvetica Neue', Helvetica, sans-serif;
 
 html {
   font-family: $font;
+  background-color: rgb(242,242,242);
+
+}
+
+.ridesharing-cont{
+  background-color: rgb(242,242,242);
 }
 
 .ridesharing-header{
@@ -33,8 +39,10 @@ html {
 
 
 .ridesharing-costs {
+  background-color: rgb(242,242,242);
+  margin-left: 8%;
   margin-top: 5%;
-  width: 100%;
+  width: 85%;
 
     .ridesharing-special {
       font-weight: 600;
@@ -65,10 +73,22 @@ html {
       display: none;
     }
 
+    .ridesharing-type-line{
+      width: 100%;
+      border-bottom: 3px solid rgb(128,128,128);
+    }
+
     .ridesharing-type-title{
+      width: 90%;
       display: inline-block;
       font-size: 3em;
       font-weight: 500;
+    }
+
+    .fa-plus{
+      display: inline-block;
+      text-align: right;
+      color: #57b74d;
     }
 
     .ridesharing-eta {
@@ -97,11 +117,10 @@ html {
 
     .ridesharing-eta.line{
       font-size: 1em;
-      border-bottom: 3px solid rgb(128,128,128);
+      // border-bottom: 3px solid rgb(128,128,128);
     }
 
     .ridesharing-cost {
-      border-bottom: 3px solid rgb(128,128,128);
       font-size: 1.5em;
       @extend.ridesharing-eta.line;
 

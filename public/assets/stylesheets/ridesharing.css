@@ -1,5 +1,9 @@
 html {
-  font-family: "Helvetica Neue", Helvetica, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f2f2f2; }
+
+.ridesharing-cont {
+  background-color: #f2f2f2; }
 
 .ridesharing-header {
   width: 100%;
@@ -23,8 +27,10 @@ html {
   display: inline-block; }
 
 .ridesharing-costs {
+  background-color: #f2f2f2;
+  margin-left: 8%;
   margin-top: 5%;
-  width: 100%; }
+  width: 85%; }
   .ridesharing-costs .ridesharing-special {
     font-weight: 600;
     width: 50%;
@@ -44,10 +50,18 @@ html {
     margin-top: 5%; }
   .ridesharing-costs .ridesharing-cost-list.hide {
     display: none; }
+  .ridesharing-costs .ridesharing-type-line {
+    width: 100%;
+    border-bottom: 3px solid gray; }
   .ridesharing-costs .ridesharing-type-title {
+    width: 90%;
     display: inline-block;
     font-size: 3em;
     font-weight: 500; }
+  .ridesharing-costs .fa-plus {
+    display: inline-block;
+    text-align: right;
+    color: #57b74d; }
   .ridesharing-costs .ridesharing-eta {
     padding-top: 5px;
     padding-bottom: 2px;
@@ -65,10 +79,8 @@ html {
       width: 49%;
       display: inline-block; }
   .ridesharing-costs .ridesharing-eta.line, .ridesharing-costs .ridesharing-cost {
-    font-size: 1em;
-    border-bottom: 3px solid gray; }
+    font-size: 1em; }
   .ridesharing-costs .ridesharing-cost {
-    border-bottom: 3px solid gray;
     font-size: 1.5em; }
     .ridesharing-costs .ridesharing-cost h3 {
       display: inline-block;
