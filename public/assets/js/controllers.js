@@ -29,8 +29,8 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
      $('.hamburger-menu').toggleClass('show');
    });
 
-   $('.ham-nav').on('click', function () {
-     $('.hamburger-menu').toggleClass('hide');
+   $('.ham-link').on('click', function () {
+     $('.hamburger-menu').toggleClass('show');
    });
 
    $('.header-left').on('click', function () {
