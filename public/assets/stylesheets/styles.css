@@ -5,37 +5,40 @@ html {
 .header-container {
   font-weight: 600;
   background-color: #efefef;
+  background: linear-gradient(white, #e9e9ea);
   width: 100%;
-  height: 3.6em;
+  height: 3em;
   border: none;
   text-align: center;
+  border-bottom:solid grey 2px;
+
   overflow: hidden; }
   .header-container .header-left {
-    background-color: #57b74d;
     float: left;
-    color: white;
+    color: #48484a;
     width: 25%;
     text-align: center;
-    padding: .7em 0 1em 0;
+    padding: .6em 0 1em .5em;
     font-size: 1.4em;
-    border: none; }
+    letter-spacing: -.05em;
+    font-weight: 400;
+    border: none red thin; }
   .header-container .rider-logo {
     height: 3em;
     display: inline-block;
     border: none;
     margin-top: .7em; }
     .header-container .rider-logo svg {
-      height: 2.3em; }
+      height: 1.6em; }
   .header-container .header-right {
-    background-color: #57b74d;
     float: right;
     width: 25%;
     text-align: center;
     font-size: 1.4em;
-    padding: .2em 0 .2em 0;
-    border: none; }
+    padding: .4em 0 .2em 0;
+    border: none red thin; }
     .header-container .header-right svg {
-      height: 2.3em; }
+      height: 1.4em; }
 
 .hamburger-menu {
   display: none; }
