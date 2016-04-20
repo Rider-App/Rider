@@ -3,9 +3,6 @@ html {
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 12pt; }
 
-header {
-  box-shadow: 0px 5px 10px #888888; }
-
 .home-map-container {
   border: .1px solid white;
   /*background-image: url(/assets/images/static-map.png);*/
@@ -133,7 +130,7 @@ input::-webkit-input-placeholder {
 }
 
 .login-modal-cont {
-  margin-top: 10%;
+  margin-top: 0;
   display: none;
   margin-left: 15%;
   width: 70%;

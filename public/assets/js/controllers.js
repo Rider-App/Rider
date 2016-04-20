@@ -65,6 +65,11 @@ riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$t
   $scope.clickedRideshare = function(index){
     rideType = index;
   }
+
+  $scope.clickedTransit = function(index){
+  transitType = index;
+}
+
     $scope.print = function apiCall(){
       var originAddress = $("#searchTextField").val();//get address
       var destinationAddress = $("#searchTextFieldTwo").val();//get address
@@ -141,7 +146,7 @@ riderApp.controller('transitController', ['$http', '$scope', 'mainInfo', 'transi
      $scope.publicTransit = $scope.farefairy.transit;
      $scope.taxi = $scope.farefairy.taxis[0];
      $scope.taxiType = $scope.taxi.travel_type;
-     $scope.publicTransport = $scope.publicTransit[0].details.transit;
+     $scope.publicTransport = $scope.publicTransit[transitType].details.transit;
      google.maps.event.addDomListener(window, 'load', transitMapFactory.initMap());//load map
     }
     else

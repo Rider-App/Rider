@@ -13,18 +13,7 @@ html {
   border-bottom:solid grey 2px;
 
   overflow: hidden; }
-
-  .header-container .header-left-login {
-    background-color: #57b74d;
-    float: left;
-    color: white;
-    width: 25%;
-    text-align: center;
-    padding: .7em 0 1em 0;
-    font-size: 1.4em;
-    border: none; }
-  .header-container .header-left-logout {
-    background-color: #57b74d;
+  .header-container .header-left {
     float: left;
     color: #48484a;
     width: 25%;
@@ -61,6 +50,7 @@ html {
     border-right: 20px solid transparent;
     border-bottom: 20px solid gray; }
   .hamburger-menu .ham-nav {
+    position: absolute;
     font-size: 2em;
     color: white;
     background-color: gray;

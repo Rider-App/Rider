@@ -1,8 +1,15 @@
 <div ng-controller = "mainController" class = "home-map-container">
 
-  <!-- <div ng-controller = "userController"> -->
+
+  <div ng-controller = "userController">
       <!-- {{loginData}} -->
-<section class = "home-container">
+      <section class = "home-container">
+        <form class = "login-modal-cont" ng-submit = "signIn()" method: "post">
+            <button class="login-modal-x">x</button>
+            <input ng-model = "loginData.email" id = "login-email-input" type="text" placeholder="email"/>
+            <input ng-model = "loginData.password" id = "login-pwd-input" type="password" placeholder="password"/>
+            <button type = "submit" class = "login-submit-btn">send</button>
+        </form> <!-- closes modal-container -->
 
   <form name="searchFields">
     <div class="start-container">
