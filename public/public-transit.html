@@ -27,10 +27,11 @@
         <li id = "long-name" class = "bus-name">{{transport.ride_name}}</li>
         <li id ="bus-total-eta" class = "bus-eta"><h2 class = "left-eta">Transit Time</h2> <h2 class = "right-eta">{{transport.transit_time}} min</h2></li>
       </ul>
-      <ul>
-        <li id ="bus-total-eta" class = "bus-eta"><h2 class = "left-eta">Total ETA</h2> <h2 class = "right-eta">{{transport.total_eta}} min</h2></li>
-      </ul>
     </main>
+    <ul>
+      <li id ="pt-total-eta" class = "bus-eta"><h2 class = "left-eta">Total ETA</h2> <h2 class = "right-eta">{{publicTransport[0].total_eta}} min</h2></li>
+    </ul>
+
 
 
     <a ng-href= {{publicTransit[0].start_journey_url}} target = "_ " class = "google-link"><div class = "transit-get-directions">Get Directions</div></a>
