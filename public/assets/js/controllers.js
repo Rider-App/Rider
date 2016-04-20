@@ -271,6 +271,4 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
     //   };//Routing on green arrow from favorites to home
     // }
 
-
-
 }]); //closes userController
