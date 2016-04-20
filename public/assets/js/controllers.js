@@ -93,6 +93,12 @@ $('.header-left-login, .login-modal-x').on('click', function () {
   $('.login-modal-cont').toggleClass('show');
 });
 
+function fillSearchBox(){
+  $('.home-searchbox').val("booya");
+}
+
+$(fillSearchBox);
+
 
 }]);//End farefairycontroller
 
@@ -223,6 +229,7 @@ riderApp.controller('userController', ['$http', '$scope', '$location', 'mainInfo
     addFav = $scope.favData.favorites[favType].address;
     mainInfo.setFavoriteLocation(addFav);
     $scope.favLoc = addFav;
+    localStorage.setItem('fav', $scope.favLoc);
     // $("#searchTextField").val($scope.favLoc);
     window.location.replace('#/');
 
