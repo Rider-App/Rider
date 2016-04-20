@@ -3,14 +3,13 @@
   <div ng-controller = "taxiController">
 
   <header class = "taxi-header">
-    <div class = "taxi-icon">
-      <i class="fa fa-taxi fa-5x" aria-hidden="true"></i>
-    </div>
     <h1 class = "taxi-title">{{taxiType}}</h1>
+    <div class = "taxi-icon">
+      <i class="fa fa-taxi fa-4x" aria-hidden="true"></i>
+    </div>
   </header>
 
   <main class = "taxi-container">
-    <h3 class = "local-taxi-title">Local Taxis</h3>
     <ul ng-repeat = "number in taxiNumber" class = "local-taxis">
       <li class = "taxi-name-container">
         <h3 class = "taxi-name">{{number.name}}</h3>
@@ -18,7 +17,7 @@
       </li>
       <li class = "taxi-button-cont">
         <a href = tel:{{number.phone}} >
-          <div class = "taxi-button">call</div>
+          <div class = "taxi-button"><i class="fa fa-phone" aria-hidden="true"></i><p>call</p></div>
         </a>
       </li>
     </ul>
