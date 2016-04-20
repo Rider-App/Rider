@@ -5,9 +5,9 @@ html {
 
 .home-map-container {
   border: .1px solid white;
-  /*background-image: url(/assets/images/static-map.png);*/
-  background-color: #efefef;
-  background-size: cover; }
+  /*background-image: url(/assets/images/Rider_home_bg.jpg);*/
+  background-image: url(/assets/images/Rider_home_bg.jpg);
+  background-size:cover; }
 
 .home-container {
   color: #48484A;

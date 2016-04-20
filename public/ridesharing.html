@@ -9,7 +9,7 @@
     <div class = "special-consid-modal">Increased rates during times of high demand.</div>
     <aside class = "ridesharing-special"><i class="fa fa-exclamation-circle"></i><div class="special-considerations-text"></div><i class="fa fa-info-circle"></i></aside>
     <ul ng-repeat="name in rideName" class = "ridesharing-cost-list">
-      <li class = "ridesharing-type-line"><h3 class = "ridesharing-type-title">{{name.ride_name}}</h3><i class="fa fa-plus" aria-hidden="true"></i></li>
+      <li class = "ridesharing-type-line"><h3 class = "ridesharing-type-title">{{name.ride_name}}</h3><!--<i class="fa fa-plus" aria-hidden="true"></i>--></li>
       <li class = "ridesharing-eta line"><h3>Pickup in</h3><p>{{name.pickup_eta}}</p></li>
       <li class = "ridesharing-eta line"><h3>Transit Time</h3><p>{{name.transit_time}}</p></li>
       <li class = "ridesharing-eta"><h2>Total ETA</h2><p class = "ridesharing-total-min">{{name.total_eta}}</p></li>

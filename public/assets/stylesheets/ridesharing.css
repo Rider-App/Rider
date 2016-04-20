@@ -5,12 +5,21 @@ html {
 .ridesharing-cont {
   background-color: #f2f2f2; }
 
+header{
+  padding: .4em 0;
+}
+
 .ridesharing-header {
   width: 100%;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3); }
   .ridesharing-header .ridesharing-title {
-    font-size: 6em;
-    font-weight: 500; }
+    display: inline-block;
+    font-size: 4.5em;
+    letter-spacing: -.025em;
+    border:none red thin;
+    margin-left:.3em;
+    color: #48484A;
+    font-weight: 600; }
 
 .special-consid-modal {
   position: absolute;
@@ -29,6 +38,7 @@ html {
 .ridesharing-costs {
   background-color: #f2f2f2;
   margin-left: 8%;
+  color: #48484A;
   margin-top: 5%;
   width: 85%; }
   .ridesharing-costs .ridesharing-special {
@@ -52,12 +62,17 @@ html {
     display: none; }
   .ridesharing-costs .ridesharing-type-line {
     width: 100%;
+    margin-bottom: .4em;
     border-bottom: 3px solid gray; }
+  .ridesharing-type-line h3{
+    padding-bottom:.2em;
+    margin-bottom:.2em;
+  }
   .ridesharing-costs .ridesharing-type-title {
     width: 90%;
     display: inline-block;
-    font-size: 3em;
-    font-weight: 500; }
+    font-size: 1.8em;
+    font-weight: 600; }
   .ridesharing-costs .fa-plus {
     display: inline-block;
     text-align: right;
@@ -66,6 +81,10 @@ html {
     padding-top: 5px;
     padding-bottom: 2px;
     font-size: 1.5em; }
+  .ridesharing-total-min{
+    font-size:.75em;
+    font-weight: 600;
+  }
     .ridesharing-costs .ridesharing-eta h3 {
       display: inline-block;
       width: 49%; }
@@ -75,7 +94,8 @@ html {
       width: 49%;
       text-align: right; }
     .ridesharing-costs .ridesharing-eta h2 {
-      font-size: 1em;
+      font-size: .75em;
+      font-weight: 600;
       width: 49%;
       display: inline-block; }
   .ridesharing-costs .ridesharing-eta.line, .ridesharing-costs .ridesharing-cost {
@@ -84,6 +104,8 @@ html {
     font-size: 1.5em; }
     .ridesharing-costs .ridesharing-cost h3 {
       display: inline-block;
+      font-size: .75em;
+      font-weight: 600;
       width: 49%; }
     .ridesharing-costs .ridesharing-cost p {
       font-weight: 600;
