@@ -27,7 +27,7 @@
     <body ng-controller="farefairyController">
       <header ng-controller="userController">
         <div class="header-container">
-          <div class="header-left-login" ng-hide="{{loggedIn}}">login</div>
+          <a href ="#/"><div class="header-left-login" ng-hide="{{loggedIn}}">login</div></a>
           <div class="header-left-logout" ng-hide="{{!loggedIn}}" ng-click="signOut()">logout</div>
             <a href ="#/"><div class="rider-logo">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -77,7 +77,7 @@
             </svg>
           </div>
         </div>
-        <aside class = "hamburger-menu">
+        <aside ng-controller = "mainController" class = "hamburger-menu">
           <div class ="ham-caret"></div>
           <ul class = "ham-nav">
             <li><a class = "ham-link" href = "#/LearnMore">Learn More</a></li>
@@ -86,6 +86,14 @@
           </ul>
         </aside>
       </header>
-        <ng-view></ng-view>
+      <div ng-controller = "userController">
+            <form class = "login-modal-cont" ng-submit = "signIn()" method: "post">
+                <button class="login-modal-x">x</button>
+                <input ng-model = "loginData.email" id = "login-email-input" type="text" placeholder="email"/>
+                <input ng-model = "loginData.password" id = "login-pwd-input" type="password" placeholder="password"/>
+                <button type = "submit" class = "login-submit-btn">send</button>
+            </form>
+      </div>
+      <ng-view></ng-view>
     </body>
 </html>

@@ -37,20 +37,20 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
  // $scope.$apply();
 
  //--LOGIN-MODAL-FUNCTIONS---------------------
-   $('.header-right, .ham-link').on('click', function () {
-     $('.hamburger-menu').toggleClass('show');
-
-   });
-
-   $('.header-left-login').on('click', function () {
-     $('.login-modal-cont').toggleClass('show');
-
-   });
-
-   $('.login-modal-x').on('click', function () {
-     $('.login-modal-cont.show').removeClass('show');
-
-   });
+  //  $('.header-right, .ham-link').on('click', function () {
+  //    $('.hamburger-menu').toggleClass('show');
+   //
+  //  });
+   //
+  //  $('.header-left-login').on('click', function () {
+  //    $('.login-modal-cont').toggleClass('show');
+   //
+  //  });
+   //
+  //  $('.login-modal-x').on('click', function () {
+  //    $('.login-modal-cont.show').removeClass('show');
+   //
+  //  });
 
 }]);//-END-MAIN-CONTROLLER----------------------
 
@@ -93,6 +93,22 @@ setTimeout(function () {
             google.maps.event.addDomListener(window, 'load', mainInfo.initMap());//load map
         }, 0);
 });
+
+//--LOGIN-MODAL-FUNCTIONS---------------------
+$('.header-right, .ham-link').on('click', function () {
+  $('.hamburger-menu').toggleClass('show');
+
+});
+
+$('.header-left-login').on('click', function () {
+  $('.login-modal-cont').toggleClass('show');
+});
+
+$('.login-modal-x').on('click', function () {
+  $('.login-modal-cont.show').removeClass('show');
+
+});
+
 
 }]);//End farefairycontroller
 

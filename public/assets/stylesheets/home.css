@@ -4,8 +4,7 @@ html {
   font-size: 12pt; }
 
 header {
-  box-shadow: 0px 5px 10px #888888;
-  border: none; }
+  box-shadow: 0px 5px 10px #888888; }
 
 .home-map-container {
   border: .1px solid white;
@@ -96,7 +95,7 @@ input::-webkit-input-placeholder {
   padding-right: 40%; }
 
 .login-modal-cont {
-  margin-top: 0;
+  margin-top: 10%;
   display: none;
   margin-left: 15%;
   width: 70%;
