@@ -30,7 +30,7 @@ html {
   width: 100%; }
   .public-transit-main .public-transit-options {
     margin-left: 8px;
-    margin-bottom: 20px; }
+    margin-bottom: 25px; }
 
 #short-name {
   margin-bottom: 10px;
@@ -70,5 +70,11 @@ html {
   color: white;
   font-size: 2em;
   text-align: center; }
+
+#pt-total-eta{
+  padding-top: 10px;
+  border-top: 3px solid rgb(128,128,128);
+  margin-left: 8px;
+}
 
 /*# sourceMappingURL=public-transit.css.map */

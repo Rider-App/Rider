@@ -36,11 +36,13 @@ var origin = "";
 var destination = "";
 var farefairy = {};
 
+
 riderApp.factory('mainInfo', function($http){
   var factory = {};
   // var origin = "";
   // var destination = "";
   // var farefairy = {};
+  var favoriteLocation;
 
   factory.setOrigin = function(originAddress){
     origin = originAddress;
@@ -110,6 +112,15 @@ riderApp.factory('mainInfo', function($http){
       });
    }
 
+   factory.setFavoriteLocation = function(location){
+     favoriteLocation = location;
+   }
+
+   factory.getFavoriteLocation = function(){
+     return favoriteLocation;
+   }
+
+
   return factory;
 });//end factory
 
@@ -158,6 +169,7 @@ riderApp.factory('transitMapFactory', function($http){
 
   return factory;
 });//end transit map factory
+
 
 var isMobile= {
    android: function () {

@@ -5,9 +5,9 @@ html {
 
 .home-map-container {
   border: .1px solid white;
-  /*background-image: url(/assets/images/Rider_home_bg.jpg);*/
-  background-image: url(/assets/images/Rider_home_bg.jpg);
-  background-size:cover; }
+  background-image: url(/assets/images/static-map.png);
+  background-color: #efefef;
+  background-size: cover; }
 
 .home-container {
   color: #48484A;
@@ -94,20 +94,22 @@ input::-webkit-input-placeholder {
   text-align: center; }
 
 .powered-by {
+  /*background-color: white;*/
   width: 100%;
   margin-right: 0; }
   .powered-by p {
-    margin-left: 25%;
+    margin-left: 20%;
     margin-top: 10px;
     font-size: 1em;
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 40px; }
   .powered-by img {
-    margin-top: 5px;
-    width: 106px;
-    height: 37px;
-    padding-left: 3px;
+    vertical-align: middle;
+    margin-left: 25%;
+    margin-bottom: 40px;
+    width: 190px;
+    height: 32px;
     display: inline-block; }
 
 .home-go-link {
