@@ -3,11 +3,17 @@
   border-bottom: 3px solid rgb(128,128,128);
   width: 90%;
   padding-bottom: 10px;
+  background-color: rgb(242,242,242);
+
+}
+
+.favorite-pg-container{
+  background-color: rgb(242,242,242);
 }
 
 .favorites-header {
+  background-color: rgb(242,242,242);
   margin-top: 10px;
-  margin-bottom: 10px;
   text-align: center; }
 
 .fav-list {
