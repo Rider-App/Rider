@@ -56,7 +56,6 @@ html {
     border-right: 20px solid transparent;
     border-bottom: 20px solid gray; }
   .hamburger-menu .ham-nav {
-    position: absolute;
     font-size: 2em;
     color: white;
     background-color: gray;

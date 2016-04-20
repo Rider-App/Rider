@@ -33,6 +33,9 @@ html {
   font-size: 2em;
   text-align: center;
   border: none; }
+  .signup-btn-container a {
+    text-decoration: none;
+    color: white; }
 
 .signup-button {
   width: 60%;
