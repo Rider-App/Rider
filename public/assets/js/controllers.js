@@ -36,22 +36,6 @@ riderApp.controller('mainController', [ '$http', '$scope', function($http, $scop
  google.maps.event.addDomListener(window, 'load', init());
  // $scope.$apply();
 
- //--LOGIN-MODAL-FUNCTIONS---------------------
-  //  $('.header-right, .ham-link').on('click', function () {
-  //    $('.hamburger-menu').toggleClass('show');
-   //
-  //  });
-   //
-  //  $('.header-left-login').on('click', function () {
-  //    $('.login-modal-cont').toggleClass('show');
-   //
-  //  });
-   //
-  //  $('.login-modal-x').on('click', function () {
-  //    $('.login-modal-cont.show').removeClass('show');
-   //
-  //  });
-
 }]);//-END-MAIN-CONTROLLER----------------------
 
 riderApp.controller('farefairyController', [ '$http', '$scope', '$location', '$timeout', 'mainInfo', '$rootScope', '$route', function($http, $scope, $location, $timeout, mainInfo, $rootScope, $route){
@@ -227,9 +211,12 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
 
 } //closes signOut function
 
+  var favType;
+
   var favoritePlace = localStorage.getItem('token_login');
 
   $scope.clickedFavorite = function(index){
+    console.log("FalaTones");
     favType = index;
   }
 
@@ -238,40 +225,26 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
 
 
     $http.post('https://farefairy.herokuapp.com/api/v1/favorites?favorite[name]=' + $('#favorite-name-input').val() + '&favorite[address]=' + $('#searchTextFieldFav').val() + '&token=' + favoritePlace).success(function(data){
-      console.log
     });
 
   } //closes scope.favorites function
+  var addFav;
+
 
     $http.get('https://farefairy.herokuapp.com/api/v1/favorites?token=' + favoritePlace).success(function(data){
       $scope.favData = data;
       $scope.favNames = $scope.favData.favorites;
-      $scope.addFav = $scope.favData.favorites[favType].address;
-      console.log($scope.addFav);
-
-      $scope.favoriteFunction = function(){
-        $("#selectedFavorite").on('click', function(){
-          $("#searchTextField").val($scope.addFav);
-          console.log($scope.addFav);
-        })
-
-        $scope.go = function ( path ) {
-          $location.path( path );
-        };//Routing on green arrow from favorites to home
-      }
-
+      // console.log($scope.addFav);
 
     }); //closes get for favData
 
-    // $scope.favoriteFunction = function(){
-    //   $("#selectedFavorite").on('click', function(){
-    //     $("#searchTextField").val($scope.addFav);
-    //     console.log($scope.addFav);
-    //   })
-    //
-    //   $scope.go = function ( path ) {
-    //     $location.path( path );
-    //   };//Routing on green arrow from favorites to home
-    // }
+    $scope.favoriteFunction = function(){
+        console.log("lalaJones");
+        addFav = $scope.favData.favorites[favType].address;
+        $("#searchTextField").val(addFav);
+        console.log(addFav);
+        window.location.replace('#/');
+    }
+
 
 }]); //closes userController

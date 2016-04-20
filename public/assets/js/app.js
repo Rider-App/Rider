@@ -159,6 +159,12 @@ riderApp.factory('transitMapFactory', function($http){
   return factory;
 });//end transit map factory
 
+// riderApp.factory('favFactory', function($http){
+//   var factory = {};
+//
+//   return factory;
+// });
+
 var isMobile= {
    android: function () {
      return navigator.userAgent.match(/Android/i);
