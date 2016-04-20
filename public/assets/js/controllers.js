@@ -154,7 +154,9 @@ riderApp.controller('ratesController', ['$http', '$scope', function($http, $scop
 
 //--SIGNUP-------------------------------------
 
-riderApp.controller('userController', ['$http', '$scope', '$location', function($http, $scope, $location){
+riderApp.controller('userController', ['$http', '$scope', '$location', 'mainInfo', function($http, $scope, $location, mainInfo){
+
+  // $("#searchTextField").val();
 
   $scope.loggedIn = false;
 
@@ -216,8 +218,15 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
   var favoritePlace = localStorage.getItem('token_login');
 
   $scope.clickedFavorite = function(index){
-    console.log("FalaTones");
+    // console.log("FalaTones");
     favType = index;
+    addFav = $scope.favData.favorites[favType].address;
+    mainInfo.setFavoriteLocation(addFav);
+    $scope.favLoc = addFav;
+    // $("#searchTextField").val($scope.favLoc);
+    window.location.replace('#/');
+
+    console.log($scope.favLoc);
   }
 
   $scope.favorites = function(){
@@ -230,7 +239,6 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
   } //closes scope.favorites function
   var addFav;
 
-
     $http.get('https://farefairy.herokuapp.com/api/v1/favorites?token=' + favoritePlace).success(function(data){
       $scope.favData = data;
       $scope.favNames = $scope.favData.favorites;
@@ -238,13 +246,15 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
 
     }); //closes get for favData
 
-    $scope.favoriteFunction = function(){
-        console.log("lalaJones");
-        addFav = $scope.favData.favorites[favType].address;
-        $("#searchTextField").val(addFav);
-        console.log(addFav);
-        window.location.replace('#/');
-    }
+
+
+    // $scope.favoriteFunction = function(){
+    //     console.log("lalaJones");
+    //     addFav = $scope.favData.favorites[favType].address;
+    //     $("#searchTextField").val(addFav);
+    //     console.log(addFav);
+    //     window.location.replace('#/');
+    // }
 
 
 }]); //closes userController
