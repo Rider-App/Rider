@@ -13,7 +13,7 @@ html {
   border-bottom:solid grey 2px;
 
   overflow: hidden; }
-  .header-container .header-left {
+  .header-container .header-left-login {
     float: left;
     color: #48484a;
     width: 25%;
@@ -23,6 +23,16 @@ html {
     letter-spacing: -.05em;
     font-weight: 400;
     border: none red thin; }
+    .header-container .header-left-logout {
+      float: left;
+      color: #48484a;
+      width: 25%;
+      text-align: center;
+      padding: .6em 0 1em .5em;
+      font-size: 1.4em;
+      letter-spacing: -.05em;
+      font-weight: 400;
+      border: none red thin; }
   .header-container .rider-logo {
     height: 3em;
     display: inline-block;
