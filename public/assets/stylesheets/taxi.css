@@ -9,52 +9,55 @@
     color: #ffb000; }
 
 .taxi-title {
-  font-size: 6em;
+  margin-left: 8px;
+  font-size: 5em;
   font-weight: 500;
   display: inline-block;
-  width: 60%; }
+  width: 70%; }
 
-.taxi-container {
-  width: 100%;
+.local-taxis {
+  width: 80%;
   margin-top: 5%;
+  margin-left: 8%;
   margin-right: 0;
   margin-bottom: 5%; }
-  .taxi-container .local-taxi-title {
-    margin-left: 8px;
-    font-size: 2em;
-    margin-bottom: 5px; }
-  .taxi-container .local-taxis {
-    width: 100%; }
-  .taxi-container .taxi-name-container {
+  .local-taxis .taxi-name-container {
     width: 70%;
     display: inline-block;
     font-size: 1.2em;
     margin-top: 5px;
-    margin-left: 8px; }
-    .taxi-container .taxi-name-container .taxi-name {
+    margin-left: 8px;
+    border-bottom: 3px solid gray; }
+    .local-taxis .taxi-name-container .taxi-name {
+      font-size: 1.2em;
+      font-weight: 500;
       display: inline-block;
-      width: 50%;
-      padding-bottom: 10px;
-      border-bottom: 3px solid gray; }
-    .taxi-container .taxi-name-container .taxi-number {
+      padding-bottom: 10px; }
+    .local-taxis .taxi-name-container .taxi-number {
+      font-size: 1em;
       text-align: right;
       display: inline-block;
-      width: 49%;
-      padding-bottom: 10px;
-      border-bottom: 3px solid gray; }
-  .taxi-container .taxi-button-cont {
-    display: inline-block;
-    width: 20%; }
-  .taxi-container .taxi-button {
-    font-size: 1.2em;
-    text-align: center;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    height: 1.5em;
+      padding-bottom: 10px; }
+  .local-taxis .taxi-button-cont {
+    margin-left: 5px;
+    vertical-align: top;
+    display: inline-block; }
+  .local-taxis .taxi-button {
+    width: 65px;
+    height: 65px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    font-size: 1.5em;
     color: white;
+    text-align: center;
     background-color: #57b74d; }
-  .taxi-container a {
+    .local-taxis .taxi-button p {
+      vertical-align: bottom; }
+    .local-taxis .taxi-button i {
+      padding-top: 5px;
+      margin-bottom: 0; }
+  .local-taxis a {
     text-decoration: none; }
 
 /*# sourceMappingURL=taxi.css.map */
