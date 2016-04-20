@@ -239,21 +239,32 @@ riderApp.controller('userController', ['$http', '$scope', '$location', function(
       $scope.favData = data;
       $scope.favNames = $scope.favData.favorites;
       $scope.addFav = $scope.favData.favorites[favType].address;
-      console.log($scope.addFav)
+      console.log($scope.addFav);
+
+      $scope.favoriteFunction = function(){
+        $("#selectedFavorite").on('click', function(){
+          $("#searchTextField").val($scope.addFav);
+          console.log($scope.addFav);
+        })
+
+        $scope.go = function ( path ) {
+          $location.path( path );
+        };//Routing on green arrow from favorites to home
+      }
 
 
     }); //closes get for favData
 
-    $scope.favoriteFunction = function(){
-      $("#selectedFavorite").on('click', function(){
-        console.log("haha jones");
-        $("#searchTextField").val("haha jones");
-      })
-
-      $scope.go = function ( path ) {
-        $location.path( path );
-      };//Routing on green arrow from favorites to home
-    }
+    // $scope.favoriteFunction = function(){
+    //   $("#selectedFavorite").on('click', function(){
+    //     $("#searchTextField").val($scope.addFav);
+    //     console.log($scope.addFav);
+    //   })
+    //
+    //   $scope.go = function ( path ) {
+    //     $location.path( path );
+    //   };//Routing on green arrow from favorites to home
+    // }
 
 
 

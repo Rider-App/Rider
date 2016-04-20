@@ -11,9 +11,9 @@
         </form>  -->
          <!-- closes modal-container -->
 
-    <form name="searchFields">
+    <form ng-controller = "userController" name="searchFields">
       <label class = "home-search-label">Start</label>
-      <aside ng-hide="{{!loggedIn}}" class = "home-favorites">favorites</aside> <i ng-click = "geoLocationStart()" class="fa fa-map-marker fa-2x"></i>
+      <a href = "#/Favorites"> <aside ng-hide="{{!loggedIn}}" class = "home-favorites">favorites</aside></a>  <i  ng-click = "geoLocationEnd()" class="fa fa-map-marker fa-2x"></i>
       <input id="searchTextField" class = "home-searchbox" type="text" placeholder = "" required>
       <label class = "home-search-label">Destination</label>
       <a href = "#/Favorites"> <aside ng-hide="{{!loggedIn}}" class = "home-favorites">favorites</aside></a>  <i  ng-click = "geoLocationEnd()" class="fa fa-map-marker fa-2x"></i>

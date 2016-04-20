@@ -12,11 +12,12 @@
       </form>
     <!-- {{formData}} -->
 
+    <h3 id = "fav-header-list" class = "favorites-header">Select your favorite place to add to your ride</h3>
     <div class = "add-favorites">
       <ul ng-repeat = "fav in favNames" class = "all-favorites">
         <li class = "fav-list">{{fav.name}}</li>
         <li class = "fav-list">{{fav.address}}</li>
-        <li class = "fav-list"> <a id = "selectedFavorite" ng-click="clickedFavorite($index); go(/#); favoriteFunction()">
+        <li class = "fav-list"> <a id = "selectedFavorite" ng-click="clickedFavorite($index); favoriteFunction()">
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 142.9 97.3" style="enable-background:new 0 0 142.9 97.3;" xml:space="preserve">
             <style type="text/css">
@@ -43,6 +44,6 @@
       </ul>
     </div>
 
-  </div>
+  </div> <!-- end user Controller -->
 
 </div>
