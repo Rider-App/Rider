@@ -21,7 +21,7 @@
     <div class="start-container">
       <label class = "home-search-label">Destination</label>
       <aside ng-hide="{{!loggedIn}}" class = "home-favorites" ng-click = "geoLocationEnd()">get location</aside>  <i  ng-click = "geoLocationEnd()" class="fa fa-map-marker fa-2x"></i>
-      <input id="searchTextFieldTwo" ng-model="input2" class = "home-searchbox two" type="text" placeholder = "" required>
+      <input id="searchTextFieldTwo" class = "home-searchbox two" type="text" placeholder = "" required>
       <a class = "home-learn-link" href = "#/Favorites"><div class = "home-learn-more favorites-link" ng-hide="{{!loggedIn}}"><i class="fa fa-thumbs-up" aria-hidden="true"></i>favorites</div></a>
       <a class = "home-learn-link" href = "#/LearnMore"><div class = "home-learn-more learn-more-link" ng-hide="{{!loggedIn}}">Learn More</div></a>
 
@@ -87,7 +87,7 @@
   <div class = "powered-by"><img class = "farefairy" src = "/assets/images/FareFairyLogo-01.jpg"></img></div>
 
   <script>
-    $('.home-searchbox').val('jefferson');
+    $('#searchTextFieldTwo').val(localStorage.getItem('fav'));
     localStorage.setItem('fav', "");
   </script>
 
