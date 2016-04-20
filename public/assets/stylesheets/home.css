@@ -5,7 +5,7 @@ html {
 
 .home-map-container {
   border: .1px solid white;
-  /*background-image: url(/assets/images/static-map.png);*/
+  background-image: url(/assets/images/static-map.png);
   background-color: #efefef;
   background-size: cover; }
 
