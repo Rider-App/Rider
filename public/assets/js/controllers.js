@@ -181,6 +181,7 @@ riderApp.controller('userController', ['$http', '$scope', '$location', 'mainInfo
     console.log(info.token, info.user_id);
     localStorage.setItem('token', info.token);
     localStorage.setItem('user_id', info.user_id);
+    window.location.href = '/';
   })
 
   } //closes signUp function
