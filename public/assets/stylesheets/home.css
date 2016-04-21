@@ -62,7 +62,7 @@ html {
  }
 
 .home-searchbox {
-  text-indent: 14%;
+  /*text-indent: 14%;*/
   font-size: 1.5em;
   /*margin:0 auto;*/
   width: 99%;
