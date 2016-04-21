@@ -23,7 +23,7 @@ html {
   border-top:solid #A4A5A6 2px;}
   .start-container{
     width:90%;
-    border:solid red thin;
+    /*border:solid red thin;*/
     margin: 0 auto;
     /*margin-top:em;*/
   }
@@ -62,7 +62,7 @@ html {
  }
 
 .home-searchbox {
-  /*text-indent: 14%;*/
+  text-indent: 14%;
   font-size: 1.5em;
   /*margin:0 auto;*/
   width: 99%;
