@@ -23,7 +23,7 @@ html {
   border-top:solid #A4A5A6 2px;}
   .start-container{
     width:90%;
-    border:none red thin;
+    border:solid red thin;
     margin: 0 auto;
     /*margin-top:em;*/
   }
